@@ -1,0 +1,107 @@
+@font-face {
+  /* Defines the huglove font family. */
+  font-family: huglove;
+
+  /* Specifies the location of the huglove font file. */
+  src: url("../assets/fonts/huglove.otf");
+}
+
+@font-face {
+  /* Defines the milyuna font family. */
+  font-family: milyuna;
+
+  /* Specifies the location of the milyuna font file. */
+  src: url("../assets/fonts/milyuna.ttf");
+}
+
+#body_index {
+  /* Sets the background image of the body. */
+  background-image: url("../assets/images/home_bgi.jpg");
+
+  /* Makes the background image cover the entire element. */
+  background-size: 100%;
+}
+
+#mycat {
+  /* Adds a margin of 150px at the top of the mycat section. */
+  margin-top: 150px;
+
+  /* Removes the margin at the bottom of the mycat section. */
+  margin-bottom: 0;
+
+  /* Sets the width of the mycat section to 100%. */
+  width: 100%;
+
+  /* Sets the height of the mycat section to 150px. */
+  height: 150px;
+}
+
+#img_cat {
+  /* Rounds the corners of the image to make it circular. */
+  border-radius: 50%;
+
+  /* Centers the image horizontally. */
+  margin: 0 auto;
+
+  /* Limits the width and height of the image to 70% of its container. */
+  max-width: 70%;
+  max-height: 70%;
+
+  /* Sets the opacity of the image to 0.9. */
+  opacity: 0.9;
+
+  /* Aligns the image content to the center horizontally. */
+  display: flex;
+}
+
+#welcome {
+  /* Sets the text color to light gray. */
+  color: #D3D3D3;
+
+  /* Removes the margin at the top of the section and adds a margin of 50px at the bottom. */
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  /* Sets the width of the section to 100% and floats it to the left. */
+  width: 100%;
+  float: left;
+
+  /* Sets the font size of the section to 18px and centers the content horizontally. */
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+#welcome #welcome_content {
+  /* Sets the font family of the element to huglove and the font size to 80px. */
+  font-family: huglove;
+  font-size: 80px;
+}
+
+#introduction {
+  /* Sets the text color to light gray. */
+  color: #D3D3D3;
+
+  /* Removes the margin at the top of the section and adds a margin of 10px at the bottom. */
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  /* Sets the width of the section to 100% and floats it to the left. */
+  width: 100%;
+  float: left;
+
+  /* Sets the font size of the section to 18px and centers the content horizontally. */
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+#introduction #introduction_content {
+  /* Sets the font family of the element to milyuna, the font size to 20px, and the font weight to bold. */
+  font-family: milyuna;
+  font-size: 20px;
+  font-weight: bold;
+  /* Centers the text content both horizontally and vertically. */
+  text-align: center;
+  line-height: 150%;
+}

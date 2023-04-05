@@ -1,0 +1,91 @@
+/* Sets margin and padding of all elements to 0 and use border-box box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Defines a custom font called nice_sugar and provide its path */
+@font-face {
+  font-family: nice_sugar;
+  src: url("../assets/fonts/nice_sugar.otf");
+}
+
+/* Styles the header section */
+#header {
+  /* Uses the custom font for the header */
+  font-family: nice_sugar;
+  /* Positions the header at the top of the page and make it fixed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Uses flexbox to horizontally center and evenly space items */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Adds a smooth transition effect when the header is scrolled or resized */
+  transition: 0.6s;
+  /* Sets padding for the header */
+  padding: 40px 100px;
+  /* Sets z-index to ensure the header stays on top of other elements */
+  z-index: 999;
+  /* Adds margin to the bottom of the header to prevent other elements from overlapping */
+  margin-bottom: 100px;
+}
+
+/* Styles the logo */
+.logo {
+  /* Sets the color of the logo to a semi-transparent shade of green */
+  color: rgba(189, 225, 195, 0.96);
+  /* Positions the logo relatively */
+  position: relative;
+  /* Sets the font size for the logo */
+  font-size: 35px;
+  /* Sets the font weight of the logo */
+  font-weight: 300;
+  /* Sets the text decoration for the logo */
+  text-decoration: 2em;
+  /* Sets the text to uppercase for the logo */
+  text-transform: uppercase;
+  /* Sets the letter spacing for the logo */
+  letter-spacing: 2px;
+  /* Adds a smooth transition effect when the logo is hovered over or resized */
+  transition: 0.6s;
+}
+
+/* Styles the unordered list within the header */
+#header ul {
+  /* Positions the unordered list relatively */
+  position: relative;
+  /* Use flexbox to horizontally center and evenly space items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles the list items within the unordered list */
+#header li {
+  /* Sets the font size for the list items */
+  font-size: 20px;
+}
+
+/* Styles the list items and anchor tags within the unordered list */
+#header ul li {
+  /* Positions the list items relatively */
+  position: relative;
+  /* Removes the default bullet point for the list items */
+  list-style: none;
+}
+
+/* Styles the ul and li and links */
+#header ul li a {
+  /* Sets the color of the anchor tags to white */
+  color: #ffffff;
+  /* Positions the anchor tags relatively */
+  position: relative;
+  /* Adds margin to the left and right of the anchor tags */
+  margin: 0 15px;
+  /* Removes the underline from the anchor tags */
+  text-decoration: none;
+}

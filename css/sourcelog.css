@@ -1,0 +1,42 @@
+/* Defines a custom font-face for Latin Modern Math font */
+@font-face {
+  font-family: LMM;
+  src: url("../assets/fonts/latinmodern-math.otf");
+}
+
+/* Styles body_index */
+#body_index {
+  /* Sets background image and specify how it should be displayed */
+  background-image: url("../assets/images/sourcelog_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Styles for the table inside the #source_log_div element */
+#source_log_div #source_log_table {
+  font-family: 'LMM';
+  font-size: 18px;
+  color: #D3D3D3;
+  /* Positions the table in the center of its container */
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+/* Styles table headers */
+#source_log_table th {
+  color: lightskyblue;
+  font-weight: bolder;
+  font-size: 24px;
+  font-style: italic;
+  font-family: 'LMM';
+  /* Aligns text to the left */
+  text-align: left;
+  /* Vertically aligns text in the middle */
+  vertical-align: middle;
+}

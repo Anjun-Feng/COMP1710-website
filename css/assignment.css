@@ -1,0 +1,5 @@
+/* Customizes link styles in assignment.html */
+a:link, a:visited {
+    color: dodgerblue;
+    text-decoration: none;
+}

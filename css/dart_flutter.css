@@ -1,0 +1,25 @@
+/* Sets the background image*/
+#body_index {
+  background-image: url("../assets/images/dart_flutter_bgi.jpg");
+  background-size: 100%;
+}
+
+#placeholder {
+  /* Adds a margin of 150px at the top of the element. */
+  margin-top: 150px;
+  /* Removes the margin at the bottom of the element. */
+  margin-bottom: 0;
+  /* Sets the width of the element to 100%. */
+  width: 100%;
+  /* Sets the height of the element to 150px. */
+  height: 150px;
+  /* Sets the text color of the element to light gray. */
+  color: #D3D3D3;
+  /* Floats the element to the left of its container. */
+  float: left;
+  /* Sets the font size of the element to 18px. */
+  font-size: 18px;
+  /* Centers the content of the element horizontally. */
+  display: flex;
+  justify-content: center;
+}
