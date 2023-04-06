@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{e2402a89f2}" />
+    <file url="PROJECT" libraries="{devicon, e2402a89f2}" />
   </component>
 </project>
