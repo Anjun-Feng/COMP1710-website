@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="../util/header.css">
+  <link rel="stylesheet" type="text/css" href="../util/footer.css">
+  <link rel="stylesheet" type="text/css" href="../css/submit.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../util/submitCheck.js"></script>
+
+  <title>Your Experience</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <header>
+      <a class="logo">&lt;My Passion&gt;</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/dart.html">
+          <i class="devicon-dart-plain-wordmark"></i>
+        </a></li>
+        <li><a href="../pages/sourcelog.html">Source Log</a></li>
+        <li><a href="../pages/sitemap.html">Site Map</a></li>
+        <li><a href="submit.html">Your Experience</a></li>
+        <li><a href="../assignment.html">Assignment</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- creates a container for the form -->
+  <div class="form_container">
+    <form onsubmit="return showConf()">
+      <p>Your Experience</p>
+      <input class="content" id="name" type="name" placeholder="Preferred Name">
+      <br>
+      <input class="content" id="email" type="email" placeholder="Email">
+      <br>
+      <textarea class="content" id="textarea" placeholder="Feel free to talk to us!"></textarea>
+      <br>
+      <input type="submit" value="Submit">
+      <input type="button" value="Clear" onclick = "clearTextBoxes()"; return false;">
+    </form>
+  
+  </div>
+
+  <div class="page_footer">
+    <footer>
+      <div class="up_container">
+        <div class="up_left box">
+          <h2>Follow Me</h2>
+          <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="up_middle box">
+          <h2>Contact</h2>
+          <div class="my_email">
+            <div>
+              <p><i class="fa-regular fa-envelope"></i></p>
+              <a href="#">u7277205@anu.edu.au</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="up_right box">
+          <h2>Find More</h2>
+          <a href="#">Feedback</a><br>
+          <a href="#">License</a><br>
+          <a href="#">Code Repository</a><br>
+          <a href="#">TechLauncher Recruitment</a>
+        </div>
+      </div>
+
+      <div class="bottom_container">
+        Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

@@ -1,55 +1,15 @@
-#body_index {
-  background-image: url("../assets/images/sitemap_bgi.jpg");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* uses grid for display */
+body {
+  background-color: #F1F1F1;
+  /* Makes the background image cover the entire element. */
   background-size: 100%;
-}
-
-/* Sets the container styles for the site map section */
-.site_map_container {
-  margin: 0 auto; /* centers the container horizontally */
-  margin-top: 300px; /* creates space between the container and the top of the page */
-  color: aliceblue; /* sets the font color for the container */
-  display: flex; /* sets the display property to flex */
-  flex-direction: row; /* sets the direction of the flex items to horizontal */
-  justify-content: center; /* centers the flex items horizontally */
-  align-items: center; /* centers the flex items vertically */
-  text-align: center; /* sets the text alignment to center */
-}
-
-/* Styles for the unordered list containing the site map items */
-ul.site_map {
-  align-self: flex-start; /* aligns the unordered list to the start of the container */
-  list-style-type: none; /* removes the bullet points from the list */
-  margin-left: 10px; /* creates space between the list and the left side of the container */
-  margin-right: 10px; /* creates space between the list and the right side of the container */
-
-}
-
-/* Styles for each list item in the site map */
-ul.site_map li {
-  background: transparent; /* sets the background to transparent */
-  width: 200px; /* sets the width of the list items */
-  margin-top: 5px; /* creates space between each list item */
-  margin-bottom: 5px; /* creates space between each list item */
-  border: 0; /* removes the border */
-  border-left: 1px solid rgba(255, 255, 255, 0.3); /* adds a left border with a slight transparency */
-  border-top: 1px solid rgba(255, 255, 255, 0.3); /* adds a top border with a slight transparency */
-  border-radius: 5px; /* adds rounded corners to the border */
-  backdrop-filter: blur(3px); /* applies a blur effect to the background */
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2); /* adds a shadow effect to the list items */
-  color: #fff; /* sets the font color to white */
-  font-family: Montserrat, sans-serif; /* sets the font family */
-  font-weight: 500; /* sets the font weight */
-  -webkit-transition: all .2s ease-in-out; /* adds a transition effect for webkit browsers */
-  transition: all .2s ease-in-out; /* adds a transition effect */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* adds a shadow effect to the text */
-}
-
-ul.site_map li a:link, a:visited {
-  color: lightgray;
-  text-decoration: none;
-}
-
-/* Styles for each list item in the site map when hovering over them */
-ul.site_map li:hover {
-  background: rgba(113, 173, 232, 0.2); /* changes the background color to a slightly transparent blue when hovering */
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }

@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* uses grid for display */
+body {
+  background: linear-gradient(45deg, #3c3c3c 50%, #333333 50%);
+  animation: animate 15s ease infinite;
+  /* Makes the background image cover the entire element. */
+  background-size: 100%;
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+@keyframes animate{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  0% {
+    background-position: 0 50%;
+  }
+
+}
+
+
+/* Positions and styles the form container */
+.form_container {
+  position: absolute; /* Positions the element absolutely */
+  -webkit-transform: translate(-50%, -50%); /* Centers the element horizontally and vertically using a CSS transform */
+  transform: translate(-50%, -50%);
+  top: 50%; /* Positions the top of the element at the vertical center of its positioned ancestor */
+  left: 50%; /* Position sthe left of the element at the horizontal center of its positioned ancestor */
+}
+
+/* Styles the form */
+form {
+  background: rgba(255, 255, 255, 0.3); /* Sets the background color and opacity for the form */
+  padding: 2em; /* Adds padding to the form */
+  height: 600px; /* Sets the height of the form */
+  border-radius: 10px; /* Adds rounded corners to the form */
+
+  /* Applies a backdrop filter and box shadow to the form */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+
+  text-align: center; /* Centers the contents of the form */
+  position: relative; /* Positions the form relatively */
+}
+
+/* Styles the paragraph inside the form */
+form p {
+  font-family: Montserrat, sans-serif; /* Sets the font family for the paragraph */
+  font-weight: 500; /* Sets the font weight for the paragraph */
+  color: #fff; /* Sets the color of the text */
+  opacity: .7; /* Sets the opacity of the text */
+  font-size: 1.4rem; /* Sets the font size of the text */
+  margin-top: 0; /* Removes the top margin */
+  margin-bottom: 60px; /* Adds bottom margin */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds text shadow */
+}
+
+/* Applies to all form inputs and textareas */
+form input, textarea {
+  /* Makes the background transparent */
+  background: transparent;
+  /* Sets the width of the form element */
+  width: 300px;
+  /* Adds a margin at the bottom of the form element */
+  margin-bottom: 2em;
+  /* Removes the default borders from the form element */
+  border: 0;
+  /* Adds a left border with a slight transparency effect */
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  /* Adds a top border with a slight transparency effect */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  /* Adds a rounded border radius to the form element */
+  border-radius: 5px;
+  /* Adds a blur effect to the background of the form element */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  /* Adds a shadow effect to the form element */
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  /* Sets the text color to white */
+  color: #fff;
+  /* Sets the font family to Montserrat, sans-serif */
+  font-family: Montserrat, sans-serif;
+  /* Sets the font weight to 500 */
+  font-weight: 500;
+  /* Adds a transition effect for all CSS properties */
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  /* Adds a shadow effect to the text of the form element */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+}
+
+/* Applies only to form input elements */
+form input {
+  /* Adds padding inside the form input element */
+  padding: 0.7em;
+}
+
+/* Applies only to textarea elements */
+form textarea {
+  /* Sets the font size of the textarea element */
+  font-size: 1rem;
+  /* Sets the height of the textarea element */
+  height: 280px;
+}
+
+/* Sets the background color and shadow effect while hovering" */
+form input:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2)
+}
+
+/* Sets the background color and shadow effect while typing" */
+form input[type="email"]:focus,
+form input[type="name"]:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2)
+}
+
+/* Styles corresponding buttons */
+form input[type="button"],
+form input[type="submit"] {
+  margin-top: 0;
+  width: 100px;
+  height: 50px;
+  font-size: 1rem
+}
+
+/* Changes the cursor to pointer while hovering over corr. buttons */
+form input[type="button"]:hover,
+form input[type="submit"]:hover {
+  cursor: pointer
+}
+
+/* Changes the bgc while activating corr. buttons */
+form input[type="button"]:active,
+form input[type="submit"]:active {
+  background: rgba(255, 255, 255, 0.2)
+}
+
+/* Customizes the placeholders */
+::-webkit-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+/* Customizes the placeholders */
+::-moz-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+/* Customizes the placeholders */
+:-ms-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+/* Customizes the placeholders */
+::-ms-input-placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+/* Customizes the placeholders */
+::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+/* Removes the outline while typing */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 0
+}
