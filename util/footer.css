@@ -22,7 +22,6 @@ html {
 .page_footer .up_container {
   display: flex;
   justify-content: center;
-
 }
 
 .page_footer .up_container .box {
@@ -78,16 +77,15 @@ html {
 }
 
 .page_footer .up_container .up_left ul li:nth-child(3) i {
-  color: #57BF26;
+  color: #fff;
 }
 
-.page_footer .up_container .up_left ul li:nth-child(5) i {
+.page_footer .up_container .up_left ul li:nth-child(4) i {
   background-image: linear-gradient(to right, #F58529, #DD2A7B, #C13584, #E1306C);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-
 
 .page_footer .up_container .up_middle .my_email div {
   display: flex;
@@ -96,15 +94,43 @@ html {
 .page_footer .up_container .up_middle a {
   color: #D3D3D3;
   text-decoration: none;
-  transition: all .5s ease;
+  transition: all .7s ease;
 }
 
 .page_footer .up_container .up_middle a:hover {
   color: palegreen;
 }
 
-.page_footer .up_container .up_middle .my_email p {
-  margin: 0 10px 0 0;
+.page_footer .up_container .up_middle i {
+  margin: 0 3px 0 0;
 }
+
+.page_footer .up_container .up_middle div:not(:first-child) {
+  margin: 5px 0 0 0;
+}
+
+.page_footer .up_container .up_right a:not(:first-child) {
+  margin: 5px 0 0 0;
+}
+
+.page_footer .up_container .up_middle .fa-envelope {
+  font-size: 18px;
+  color: lightblue;
+}
+
+.page_footer .up_container .up_middle .fa-whatsapp {
+  font-size: 20px;
+  color: #30f530;
+}
+
+.page_footer .up_container .up_middle .fa-facebook-messenger {
+  font-size: 19px;
+  background-image: linear-gradient(to bottom, #0078FF, #6A4BFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
 
 

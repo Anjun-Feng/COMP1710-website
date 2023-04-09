@@ -10,15 +10,16 @@
   <link rel="stylesheet" type="text/css" href="../util/footer.css">
   <link rel="stylesheet" type="text/css" href="../css/submit.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script src="https://sdk.twilio.com/js/client/releases/1.20.0/twilio.min.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../util/submitCheck.js"></script>
+  <script type="text/javascript" src="../js/submit.js"></script>
 
   <title>Your Experience</title>
 </head>
 
 <body>
 
-  <div class="header">
+  <div class="navbar">
     <header>
       <a class="logo">&lt;My Passion&gt;</a>
       <ul>
@@ -38,14 +39,20 @@
   <div class="form_container">
     <form onsubmit="return showConf()">
       <p>Your Experience</p>
-      <input class="content" id="name" type="name" placeholder="Preferred Name">
+      <label for="user_name"></label>
+      <input class="content" id="user_name" type="text" placeholder="Preferred Name">
       <br>
-      <input class="content" id="email" type="email" placeholder="Email">
+
+      <label for="user_email"></label>
+      <input class="content" id="user_email" type="email" placeholder="Email">
       <br>
-      <textarea class="content" id="textarea" placeholder="Feel free to talk to us!"></textarea>
+
+      <label for="user_suggestion"></label>
+      <textarea class="content" id="user_suggestion" placeholder="Feel free to talk to us!"></textarea>
       <br>
+
       <input type="submit" value="Submit">
-      <input type="button" value="Clear" onclick = "clearTextBoxes()"; return false;">
+      <input type="button" value="Clear" onclick = "clearTextBoxes()"; return false;>
     </form>
   
   </div>
@@ -58,7 +65,7 @@
           <ul>
             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>

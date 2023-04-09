@@ -4,12 +4,15 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* uses grid for display */
 body {
-  background-color: #F1F1F1;
   /* Makes the background image cover the entire element. */
   background-size: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }

@@ -11,5 +11,6 @@
     <orderEntry type="library" name="e2402a89f2" level="application" />
     <orderEntry type="library" name="devicon" level="application" />
     <orderEntry type="library" name="w3" level="application" />
+    <orderEntry type="library" name="p5" level="project" />
   </component>
 </module>

@@ -6,82 +6,89 @@
   <title>My Passion</title>
 
   <!-- Import Section-->
-  <script src="./assets/lib/jquery-3.6.4.js"></script>
-  <link rel="stylesheet" type="text/css" href="util/header.css">
+  <link rel="stylesheet" type="text/css" href="util/index_header.css">
   <link rel="stylesheet" type="text/css" href="./util/footer.css">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script src="./lib/p5.js"></script>
+  <script src="./lib/p5.sound.js"></script>
+  <script type="text/javascript" src="js/snowing.js"></script>
+  <script type="text/javascript" src="js/snowflake.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
-  <div class="header">
+  <div class="navbar">
     <header>
-      <a class="logo">&lt;My Passion&gt;</a>
+      <a href="#" class="logo" id="microphone-link">&lt;My Passion&gt;</a>
+
       <ul>
         <li><a href="./index.html">Home</a></li>
-        <li><a href="pages/dart.html">
+        <li><a href="./pages/dart.html">
           <i class="devicon-dart-plain-wordmark"></i>
         </a></li>
         <li><a href="./pages/sourcelog.html">Source Log</a></li>
         <li><a href="./pages/sitemap.html">Site Map</a></li>
-        <li><a href="pages/submit.html">Your Experience</a></li>
+        <li><a href="./pages/submit.html">Your Experience</a></li>
         <li><a href="./assignment.html">Assignment</a></li>
       </ul>
     </header>
   </div>
 
   <div class="content">
-    <div id="mycat">
-      <img src="./assets/images/my_cat.jpg">
-    </div>
-
     <!-- Create a container for welcome-->
-    <div class="welcome">
-      <p>Welcome!</p>
-    </div>
 
-    <p class="introduction_content">
-      My name is Anjun. Nice to meet you!<br>
-      I am a third-year undergrad student of ANU.<br>
-      I'm in the Bachelor of IT, studying major of Software development.<br>
-      <br>
-      I'm a cat person. What you see is my cat Jam Jam (British short hair)!<br>
-      I like programming a lot, I have been using Java / Kotlin and Python for two years!<br>
-      I used to work as a software developer in Shunjian Tech., Hangzhou.<br>
-      <br>
-      I like to playing my electric guitar when I am free. Please contact me if you can play it too!<br>
-      I'm a big fan of Pink Floyd and X Japan. Almost all music I listen to is the rock and roll.<br>
-      I play video games quite often (at late night). The ones I mostly play is Apex Legends<br>
-      <br>
-      Now, I am a Dart / Flutter back-end developer in a TechLauncher project called Joyful Fashionista.<br>
-      Our goal is to improve our natural surrondings by creating a platform which provides<br>
-      opportunities to our users of selling their shelved items!<br>
-      <br>
-      My website will mainly focus on sharing cases of learning and using Dart as a cross-platform develop tool.<br>
-      There will be code examples available and a photo gallery in later protypes!<br>
-    </p>
+    <div class="introduction_content">
+      <div class="welcome">
+        <p>Welcome!</p>
+      </div>
+
+      <div id="mycat">
+        <img src="./assets/images/my_cat.jpg">
+      </div>
+
+      <p id="p1">This is a Tech Blog maintained by Anjun</p><br>
+      <p id="p2">
+        I'll be sharing experience (mostly in code) about me developing using Flutter here.<br>
+        I am a third-year undergraduate student in Bachelor of IT.<br>
+        I'm studying Major of Software Development.<br>
+        I was a software developer in Shunjian Tech., China.<br>
+        I'm currently a back-end member in Joyful Fashionista - a TechLauncher project.<br>
+      </p>
+    </div>
 
     <div class="dart_intro">
       <div class="programming_languages">
         <h2>Why choose to use <a href="https://dart.dev/"><i class="devicon-dart-plain colored">Dart</i></a> instead of the followings?</h2>
         <div>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-java-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-kotlin-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-swift-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-java-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-kotlin-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-swift-144.png" alt="java icon"></a>
         </div>
         <div>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-python-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-ruby-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-php-logo-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-python-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-ruby-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-php-logo-144.png" alt="java icon"></a>
         </div>
         <div>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-javascript-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-cpp-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="./assets/images/icons8-golang-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-javascript-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-cpp-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="assets/images/icons/icons8-golang-144.png" alt="java icon"></a>
         </div>
       </div>
+
+      <div class="explanation">
+        <ul>
+          <li>It's a new-gen language - simple syntax; easy to learn</li>
+          <li>Single-threaded. Meaning there are no locks, and no common lags from JVM (especially Android)</li>
+          <li>It supports both JIT and AOT.</li>
+          <li>It is cross-platform. Imagine using one language for both Android and IOS!</li>
+          <li>No more Java-styled stinky, long, annoying code.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="more_about_me">
     </div>
   </div>
 
@@ -91,35 +98,43 @@
         <div class="up_left box">
           <h2>Follow Me</h2>
           <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100091622324806"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/pathfinder6996"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Anjun-Feng"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/pathfinder669/"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
         </div>
 
         <div class="up_middle box">
           <h2>Contact</h2>
-          <div class="my_email">
+          <div>
             <div>
-              <p><i class="fa-regular fa-envelope"></i></p>
+              <i class="fa-regular fa-envelope"></i>
               <a href="#">u7277205@anu.edu.au</a>
             </div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/478927444?text=Hi%20there...">+61 478927444</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <a href="https://m.me/5458821394223500">msg via Messenger</a>
+            </div>
+
           </div>
         </div>
 
         <div class="up_right box">
           <h2>Find More</h2>
           <a href="#">Feedback</a><br>
-          <a href="#">License</a><br>
+          <a href="https://www.apache.org/licenses/LICENSE-2.0">License</a><br>
           <a href="#">Code Repository</a><br>
           <a href="#">TechLauncher Recruitment</a>
         </div>
       </div>
 
       <div class="bottom_container">
-        Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+        Apache 2.0 License Applied. All content created by Anjun Feng.
       </div>
 
     </footer>
