@@ -48,6 +48,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: rgba(128, 128, 128, 0.4);
+  margin: 5% 0 0 0;
 }
 
 .content .introduction_content #mycat img {
@@ -74,7 +75,7 @@ body {
 
 .content .introduction_content .welcome p {
   color: white;
-  /* Sets the font family of the element to huglove and the font size to 80px. */
+
   font-family: huglove;
   font-size: 70px;
 }

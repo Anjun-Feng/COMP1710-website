@@ -12,5 +12,6 @@
     <orderEntry type="library" name="devicon" level="application" />
     <orderEntry type="library" name="w3" level="application" />
     <orderEntry type="library" name="p5" level="project" />
+    <orderEntry type="library" name="Candy.build" level="application" />
   </component>
 </module>
