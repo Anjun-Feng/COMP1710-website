@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{Candy.build, devicon, e2402a89f2, p5, w3}" />
+    <file url="PROJECT" libraries="{Candy.build, devicon, e2402a89f2, highlight.js, p5, w3}" />
   </component>
 </project>

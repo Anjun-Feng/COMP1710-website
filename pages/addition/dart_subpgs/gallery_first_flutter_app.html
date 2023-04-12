@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="../../../util/header.css">
+  <link rel="stylesheet" type="text/css" href="../../../util/footer.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <!-- Include highlight.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <!-- Include the theme CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/addition/dart_subpgs/gallery_first_flutter_app.css">
+
+  <script>hljs.highlightAll();</script>
+
+  <title>Site Map</title>
+</head>
+
+<body>
+<div class="navbar">
+  <header>
+    <a class="logo">&lt;My Passion&gt;</a>
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../pages/dart.html">
+        <i class="devicon-dart-plain-wordmark"></i>
+      </a></li>
+      <li><a href="../../../pages/sourcelog.html">Source Log</a></li>
+      <li><a href="../../../pages/sitemap.html">Site Map</a></li>
+      <li><a href="../../../assignment.html">Assignment</a></li>
+    </ul>
+  </header>
+</div>
+
+<div class="content">
+  <h3>Your first app</h3>
+  <p class="text">
+    It's time to create our first Flutter application!<br><br>
+
+    Before we start coding, you should install an iPhone / Android simulator. You can choose whatever device you want,
+    but it's important to consider the oldest OS version that our app supports. Since it's for test purpose,
+    let's use something that won't go wrong by choosing a relatively new api level and device. A recommended one
+    for Android is the "Resizable (Experimental)".
+  </p>
+    <ol class="ordered_list">
+      <li><b>Go to the nav bar on the rightmost side of AS, and click on "Device manager".</b></li>
+      <li><b>choose "Resizable" and click "next".</b></li>
+      <li><b>Choose API level of 33.</b></li>
+      <li><b>As it's well known a simulator can really take some memory resources. So, you should give it enough memory for it to run. A
+        recommended size is 12GB.</b></li>
+      <li><b>Now, click on the yes options till it's being downloaded, and wait for a while till the download is done.</b></li>
+      <li><b>Once you've successfully downloaded a device, restart AS.</b></li>
+    </ol><br>
+
+  <p class="text">
+    Now, let's do some coding. On the leftmost side of the top nav bar, click and hover on "File".
+  </p>
+
+  <ol class="ordered_list">
+    <li><b>File > New Flutter Project</b></li>
+    <li><b>Click on "Flutter" on the left. Specify Flutter SDK dir if necessary.</b></li>
+    <li><b>Name your project, and put it somewhere you like. Click on "next". Remain other options as default</b></li>
+    <li><b>Click "Finish"</b></li>
+    <li><b>Wait until nothing pops up.</b></li>
+  </ol><br>
+
+  <p class="text">
+    You should see this the file structure like this. You should be able to open up "lib > main.dart".<br>
+    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_dir_info.png" alt="img of what a initial Flutter project file structure looks like"><br><br>
+
+    Navigate to the top nav bar. Run your device in "device manager". Once the device shows up, "run main.dart".
+    You might need to manually select your device, please select the one you downloaded. When you first lunch your app,
+    it may take a while.<br>
+    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_start_app.png" alt="img that shows how to start an app"><br>
+  </p><br>
+
+  <h3>Hot reload</h3>
+  <p class="text">
+    One of the best feature of Flutter is that the app can hot reload itself. You don't need to restart the app to
+    see that you've made. While your app is running, click on the little lightning button to hot reload your app.
+    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_hot_reload_button.png" alt="img that shows what the hot reload button looks like"><br><br>
+
+    We can that Flutter has already created the app that counts the number of times we click on the button on the
+    bottom right. In the next section, we'll be introducing what the elements in the code are and what they do.
+    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_first_app_appearance.png" alt="img of what the app looks like"><br><br>
+
+
+
+  </p>
+
+
+
+
+  <!--  <pre>-->
+  <!--    <code class="language-javascript">-->
+  <!--      const example = 42;-->
+  <!--      let message = 'Hello, world!';-->
+  <!--    </code>-->
+  <!--  </pre>-->
+</div>
+
+<div class="page_footer">
+  <footer>
+    <div class="up_container">
+      <div class="up_left box">
+        <h2>Follow Me</h2>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="up_middle box">
+        <h2>Contact</h2>
+        <div class="my_email">
+          <div>
+            <p><i class="fa-regular fa-envelope"></i></p>
+            <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">Mail me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="up_right box">
+        <h2>Find More</h2>
+        <a href="#">Feedback</a><br>
+        <a href="#">License</a><br>
+        <a href="#">Code Repository</a><br>
+        <a href="#">TechLauncher Recruitment</a>
+      </div>
+    </div>
+
+    <div class="bottom_container">
+      Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

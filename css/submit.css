@@ -6,11 +6,8 @@
 
 /* uses grid for display */
 body {
-  background: linear-gradient(45deg, #3c3c3c 50%, #333333 50%);
-  animation: animate 15s ease infinite;
-  /* Makes the background image cover the entire element. */
-  background-size: 100%;
 
+  background-size: 100%;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;

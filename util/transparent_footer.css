@@ -4,10 +4,8 @@ html {
 
 .page_footer {
   max-width: 100%;
-  background-color: #24262B;
+  background-color: rgba(36, 38, 43, 0.5);
 }
-
-
 
 .page_footer {
   margin: 0;
