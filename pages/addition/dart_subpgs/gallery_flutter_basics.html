@@ -8,18 +8,18 @@
 
   <link rel="stylesheet" type="text/css" href="../../../util/header.css">
   <link rel="stylesheet" type="text/css" href="../../../util/footer.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/addition/dart_subpgs/gallery_flutter_basics.css">
+
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
   <!-- Include highlight.js library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-  <!-- Include the theme CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/atom-one-dark.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../css/addition/dart_subpgs/gallery_first_flutter_app.css">
-
-  <script>hljs.highlightAll();</script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../util/codeBlockHighlight.css">
 
   <title>Site Map</title>
+
 </head>
 
 <body>
@@ -39,57 +39,152 @@
 </div>
 
 <div class="content">
-  <h3>Your first app</h3>
-  <p class="text">
-    It's time to create our first Flutter application!<br><br>
+  <h3>What elements does a Flutter app have?</h3><br><br>
 
-    Before we start coding, you should install an iPhone / Android simulator. You can choose whatever device you want,
-    but it's important to consider the oldest OS version that our app supports. Since it's for test purpose,
-    let's use something that won't go wrong by choosing a relatively new api level and device. A recommended one
-    for Android is the "Resizable (Experimental)".
+  <pre><code class="language-javascript">
+      import 'package:flutter/material.dart';
+
+      void main() {
+        runApp(const MyApp());
+      }
+
+      class MyApp extends StatelessWidget {
+        const MyApp({super.key});
+
+        // This widget is the root of your application.
+        @override
+        Widget build(BuildContext context) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              // This is the theme of your application.
+              // Try running your application with "flutter run".
+              // You'll see theapplication has a blue toolbar.
+              // Then, without quitting the app, try changing
+              // the primarySwatch below to Colors.green and
+              // then invoke "hot reload" (press "r" in the
+              // console where you ran "flutter run",
+              // or simply save your changes to "hot reload"
+              // in a Flutter IDE).
+              // Notice that the counter didn't reset back to
+              // zero; the application is not restarted.
+              primarySwatch: Colors.blue,
+            ),
+            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          );
+        }
+      }
+
+      class MyHomePage extends StatefulWidget {
+        const MyHomePage({super.key, required this.title});
+
+        // This widget is the home page of your application.
+        // It is stateful, meaning that it has a State object
+        // (defined below) that contains fields that affect
+        // how it looks.
+        // This class is the configuration for the state.
+        // It holds the values (in this case the title) provided
+        // by the parent (in this case the App widget) and
+        // used by the build method of the State. Fields in a
+        // Widget subclass are always marked "final".
+
+        final String title;
+
+        @override
+        State&lt;MyHomePage&gt; createState() => _MyHomePageState();
+      }
+
+      class _MyHomePageState extends State&lt;MyHomePage&gt; {
+        int _counter = 0;
+
+        void _incrementCounter() {
+          setState(() {
+            // This call to setState tells the Flutter framework
+            // that something has changed in this State, which
+            // causes it to rerun the build method below
+            // so that the display can reflect the updated
+            // values. If we changed _counter without calling
+            // setState(), then the build method would not be
+            // called again, and so nothing would appear to happen.
+            _counter++;
+          });
+        }
+
+        @override
+        Widget build(BuildContext context) {
+          // This method is rerun every time setState is called,
+          // for instance as done by the _incrementCounter method
+          // above. The Flutter framework has been optimized to make
+          // rerunning build methods fast, so that you can just
+          // rebuild anything that needs updating rather
+          // than having to individually change instances of widgets.
+          return Scaffold(
+            appBar: AppBar(
+              // Here we take the value from the MyHomePage
+              // object that was created by the App.build method,
+              // and use it to set our appbar title.
+              title: Text(widget.title),
+            ),
+            body: Center(
+              // Center is a layout widget. It takes a single child
+              // and positions it in the middle of the parent.
+              child: Column(
+                // Column is also a layout widget. It takes a
+                // list of children and arranges them vertically.
+                // By default, it sizes itself to fit its children
+                // horizontally, and tries to be as tall as its
+                // parent. Invoke "debug painting" (press "p" in
+                // the console, choose the "Toggle Debug Paint"
+                // action from the Flutter Inspector in Android
+                // Studio, or the "Toggle Debug Paint" command in
+                //Visual Studio Code) to see the wireframe for
+                // each widget.
+                // Column has various properties to control how it
+                // sizes itself and how it positions its children.
+                // Here we use mainAxisAlignment to center the
+                // children vertically; the main axis here is the
+                // vertical axis because Columns are vertical (the
+                // cross axis would be horizontal).
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: &lt;Widget&gt;[
+                  const Text(
+                    'You have pushed the button this many times:',
+                  ),
+                  Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ],
+              ),
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+            ), // This trailing comma makes auto-formatting
+               // nicer for build methods.
+          );
+        }
+      }
+    </code></pre><br>
+
+  <p class="text">
+    First of all, let's take a look at the import statement.<br>
+    <code class="inline_code">import 'package:flutter/material.dart';</code><br>
+    Material is a visual design language that is widely used. Flutter provides
+    us with various Material-styled UI components.<br><br>
+
+    Just like Java, Kotlin, C/C++, a <code class="inline_code">main</code> function
+    is an entrance of the app. In <code class="inline_code">main</code>, we can see
+    it calls the method <code class="inline_code">runApp</code>, which starts a Flutter
+    app. <code class="inline_code">runApp</code> takes in a <code class="inline_code">Widget</code> parameter, in this case, the <code class="inline_code">MyApp</code>
+    object.
+    <code class="inline_code">void main() => runApp(MyApp());</code><br>
+    Notice the <code class="inline_code">=></code> here. It's a syntax sugar for writing
+    a function in a single line.
+
   </p>
-  <ol class="ordered_list">
-    <li><b>Go to the nav bar on the rightmost side of AS, and click on "Device manager".</b></li>
-    <li><b>choose "Resizable" and click "next".</b></li>
-    <li><b>Choose API level of 33.</b></li>
-    <li><b>As it's well known a simulator can really take some memory resources. So, you should give it enough memory for it to run. A
-      recommended size is 12GB.</b></li>
-    <li><b>Now, click on the yes options till it's being downloaded, and wait for a while till the download is done.</b></li>
-    <li><b>Once you've successfully downloaded a device, restart AS.</b></li>
-  </ol><br>
 
-  <p class="text">
-    Now, let's do some coding. On the leftmost side of the top nav bar, click and hover on "File".
-  </p>
-
-  <ol class="ordered_list">
-    <li><b>File > New Flutter Project</b></li>
-    <li><b>Click on "Flutter" on the left. Specify Flutter SDK dir if necessary.</b></li>
-    <li><b>Name your project, and put it somewhere you like. Click on "next". Remain other options as default</b></li>
-    <li><b>Click "Finish"</b></li>
-    <li><b>Wait until nothing pops up.</b></li>
-  </ol><br>
-
-  <p class="text">
-    You should see this the file structure like this. You should be able to open up "lib > main.dart".<br>
-    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_dir_info.png" alt="img of what a initial Flutter project file structure looks like"><br><br>
-
-    Navigate to the top nav bar. Run your device in "device manager". Once the device shows up, "run main.dart".
-    You might need to manually select your device, please select the one you downloaded. When you first lunch your app,
-    it may take a while.<br>
-    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_start_app.png" alt="img that shows how to start an app"><br>
-  </p><br>
-
-  <h3>Hot reload</h3>
-  <p class="text">
-    One of the best feature of Flutter is that the app can hot reload itself. You don't need to restart the app to
-    see that you've made. While your app is running, click on the little lightning button to hot reload your app.
-    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_hot_reload_button.png" alt="img that shows what the hot reload button looks like"><br><br>
-
-    We can that Flutter has already created the app that counts the number of times we click on the button on the
-    bottom right. In the next section, we'll be introducing what the elements in the code are and what they do.
-    <img class="in_text_img" src="../../../assets/images/screenshots/flutter_app_first_app_appearance.png" alt="img of what the app looks like"><br><br>
-  </p>
 </div>
 
 <div class="page_footer">

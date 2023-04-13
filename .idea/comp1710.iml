@@ -14,5 +14,6 @@
     <orderEntry type="library" name="p5" level="project" />
     <orderEntry type="library" name="Candy.build" level="application" />
     <orderEntry type="library" name="highlight.js" level="application" />
+    <orderEntry type="library" name="prism" level="application" />
   </component>
 </module>

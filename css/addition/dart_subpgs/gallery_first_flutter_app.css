@@ -31,34 +31,15 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
   background: #D3D3D3;
-  padding: 0 100px 0 100px;
+  padding: 0 50px 0 50px;
 }
 
 .content .text {
   margin: 5px 0 5px 0;
-}
-
-.content pre {
-  display: inline-block;
-  margin: 5px 0 5px 0;
-  border-radius: 10px;
-  background-color: #282C34;
-  overflow-x: auto;
-  font-size: 14px;
-  padding: 0;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.content pre .language-javascript {
-  display: inline-block; /* Add this line */
-  margin: 0;
-  padding: 0; /* Adjust this value to reduce extra space */
-  font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 .content .inline_code {
