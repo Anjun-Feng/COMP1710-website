@@ -10,7 +10,11 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: #D3D3D3;;
+
+}
+
+ol, ul {
+  margin-left: 30px;
 }
 
 .content {
@@ -99,6 +103,10 @@ body {
   margin: 0 -50px 0 -50px;
 }
 
+.img_gallery .row .description {
+  color: white;
+}
+
 .img_gallery .row .block img, .description {
   width: 80%;
 
@@ -123,6 +131,10 @@ body {
 
 .img_gallery .row .block .description {
   padding: 5px 15px 15px 15px;
-  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.container p, h2, h3 {
+  color: white;
 }
 

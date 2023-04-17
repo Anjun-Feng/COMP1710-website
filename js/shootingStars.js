@@ -4,16 +4,19 @@
  * @last-edited 10/4/2023
  * @description Using p5.js to create a scene of shooting stars.
  */
-
-let shootingStars = [];
 let canvas;
+let shootingStars = [];
+let canvasWidth, canvasHeight;
 
 /**
  * p5.js built-in function. It is used for initializing variables and performing setup tasks
  * after the assets have been loaded and before the main loop `draw()` begins.
  */
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
+    canvasWidth = windowWidth - 8; // 8 is the width of the scroll bar. See /util/scrollbar.css
+    canvasHeight = windowHeight;
+    canvas = createCanvas(canvasWidth, canvasHeight);
+
     // Make the canvas fit the window
     canvas.style('position', 'fixed');
     canvas.style('left', '0');
@@ -22,6 +25,13 @@ function setup() {
     canvas.style('width', '100%');
     canvas.style('height', '100%');
 }
+
+function windowResized() {
+    canvasWidth = windowWidth;
+    canvasHeight = windowHeight;
+    resizeCanvas(canvasWidth, canvasHeight);
+}
+
 
 /**
  * p5.js built-in function. Draws the content each frame rate.

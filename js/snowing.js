@@ -13,13 +13,14 @@ function preload() {
 function setup() {
     canvasWidth = windowWidth;
     canvasHeight = windowHeight;
-    canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas = createCanvas(canvasWidth - 8, canvasHeight);
     canvas.style('position', 'fixed');
     canvas.style('left', '0');
     canvas.style('top', '0');
     canvas.style('z-index', '-1');
     canvas.style('width', '100%');
     canvas.style('height', '100%');
+    // canvas.style('overflow', 'hidden');
 
     gravity = createVector(0, 0.3);
 

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="../../../util/header.css">
+  <link rel="stylesheet" type="text/css" href="../../../util/footer.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/addition/dart_subpgs/gallery_flutter_network_programming_pt1.css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <!-- Include highlight.js library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../util/codeBlockHighlight.css">
+
+  <title>Flutter Network Programming, Part 1</title>
+</head>
+
+<body>
+<div class="navbar">
+  <header>
+    <a class="logo">&lt;My Passion&gt;</a>
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../pages/dart.html">
+        <i class="devicon-dart-plain-wordmark"></i>
+      </a></li>
+      <li><a href="../../../pages/sourcelog.html">Source Log</a></li>
+      <li><a href="../../../pages/sitemap.html">Site Map</a></li>
+      <li><a href="../../../assignment.html">Assignment</a></li>
+    </ul>
+  </header>
+</div>
+
+<div class="content">
+  <h2>Network Programming with Flutter, pt.1</h2><br><br>
+
+  <h3>Introduction</h3><br>
+  <p>
+    Theoretically, you should be familiar with basic network knowledge. If not, you should consider taking
+    COMP2400. It's a good course where you can learn fundamental knowledge about network designs, including
+    both software and hardware. Later, you can apply such knowledge in your programming practice.<br><br>
+
+    If not, you'll get to see what is looks like and gain a smell of it. Configuring networks can be
+    very time-consuming in learning APIs and debugging. But it makes you feel good when you see the magics -
+    you can get instant feedback from a server by less than 5 lines code!<br><br>
+  </p>
+
+  <h3>As a back-end developer...</h3><br>
+  <p>
+    Before we start, let's think about this case.
+    Suppose you have purchased a server, and there's a database configured by it. How do you retrieve data
+    from the database?<br><br>
+
+    As a back-end developer, you need to focus on how well things work - not how good things look. Then you
+    would always like to use APIs instead of creating a bunch of stuff. For instance, many blog creators
+    prefer to use Word Press for their websites. WP provides their users with both WordPress REST API and
+    Woocommerce REST API, where latter is more commercial. Now, what is a REST API?<br><br>
+  </p>
+
+  <h3>Introduction to REST APIs</h3><br>
+  <p>
+    A REST API (Representational State Transfer Application Programming Interface), to be short, is a type
+    of interface based on network applications. It uses HTTP protocol for transmission. REST is a software
+    design style. There are 3 things about REST that you need to know here:<br>
+  </p>
+  <ul>
+    <li>It uses the client-server architecture.</li>
+    <li>The server does not preserve any (stateful) information of the client</li>
+    <li>It uses HTTP methods e.g., GET, POST, PUT and DELETE</li>
+  </ul><br>
+
+  <p>
+    Woo! let's use the Woocommerce (Wc) API to build a prototype to allow users to register and login!<br><br>
+
+    The first thing is that you need to register a Word Press account. Once you are in the panel, make
+    sure you open Wc. Furthermore, you should allow anyone to register, in settings.<br><br>
+
+    You should have your consumer_key and consumer_secrete ready. If you don't know where to find them, ask
+    Google or ChatGPT.<br><br>
+  </p>
+
+  <p>
+    In <code class="inline_code">pubspec.yaml</code>, below sdk:flutter, add the following code:
+  </p>
+
+  <pre><code class="language-javascript">
+    dependencies:
+      flutter:
+        sdk: flutter
+    http: ^0.13.3 // add this to introduce the http lib
+  </code></pre><br>
+
+  <p>
+    Then, create a new file called "handle.dart" in the lib directory in your project. For convenience, you may
+    want it to be in the same dir as your "main.dart".
+  </p><br>
+
+  <p>Save your consumer_key, consumer_secret and API url as:</p>
+
+  <pre><code class="language-javascript">
+    const consumer_key = 'your consumer_key'
+    const consumer_secret = 'your consumer_secret'
+    const apiUrl = 'your apiUrl';
+  </code></pre><br>
+
+  <p>
+    We can also use the base64 encode to protect our key and secret. Note that you should never use such simple
+    approaches except that you are testing:
+  </p>
+
+  <pre><code class="language-javascript">
+    String basicAuth = 'Basic ' +
+        base64Encode(utf8.encode(
+            '$consumer_key:$consumer_secret'));
+  </code></pre><br>
+
+  <p>
+    Let's create a method that allow a new user to register:
+  </p>
+
+  <pre><code class="language-javascript">
+    Future&lt;void&gt; registerUser(String email, String username, String password) async {
+      // wp-json/wc/v3/customers is the endpoint provided by Woocommerce REST API
+      // where customers info can be requested
+      final String apiUrl = '$apiUrl/wp-json/wc/v3/customers';
+
+      final Map&lt;String, String&gt; userData = {
+        'email': email,
+        'username': username,
+        'password': password
+      };
+
+      try {
+        final response = await http.post(
+          Uri.parse(apiUrl),
+          body: json.encode(userData),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': basicAuth
+          }
+        );
+
+        if (response.statusCode == 201) {
+          // request succeeded, do something with the response
+          print('User registered successfully');
+          print('Response body: ${response.body}');
+        } else {
+          // request failed, do something with the response
+          print('Failed to register user');
+          print('Status code: ${response.statusCode}');
+          print('Response body: ${response.body}');
+        }
+      } catch (e) {
+        // handle errors
+        print('Error: $e');
+      }
+    }
+  </code></pre><br>
+
+  <p>
+    In fact, you can check manually in the panel provided by WP. But since we are doing this back-end stuff,
+    let's write some code to take care of it:
+  </p><br>
+
+  <pre><code class="language-javascript">
+    Future&lt;void&gt; fetchCustomers(String consumerKey, String consumerSecret) async {
+      // Use the apiUrl with your credentials
+      final String urlWithCredentials =
+          apiUrl + '?consumer_key=$consumerKey&consumer_secret=$consumerSecret';
+
+      try {
+        final response = await http.get(
+            Uri.parse(urlWithCredentials)
+        );
+
+        if (response.statusCode == 200) {
+          print("succeeded to send request");
+          print(response.body.toString());
+        } else {
+          print("failed to send request");
+          print(response.toString());
+        }
+      } catch (e) {
+      }
+    }
+  </code></pre><br>
+
+  <p>
+    If the GET method succeeds, you will see a list of customers in a json form in the HTTP body:
+  </p><br>
+
+  <pre><code class="language-javascript">
+    [{"id":15,"date_created":"2023-04-15T05:22:28","date_created_gmt":"2023-04-15T05:22:28","date_modified":"2023-04-15T05:22:29","date_modified_gmt":"2023-04-15T05:22:29","email":"123@gmail.com","first_name":"123","last_name":"123","role":"customer","username":"123","billing":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","postcode":"","country":"","state":"","email":"","phone":""},"shipping":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","postcode":"","country":"","state":"","phone":""},"is_paying_customer":false,"avatar_url":"https:\/\/secure.gravatar.com\/avatar\/97c7b5651d1d70bcab14249e0cc93520?s=96&d=mm&r=g","meta_data":[],"_links":{"self":[{"href":"https:\/\/joyfulteams.shop\/wp-json\/wc\/v3\/customers\/15"}],"collection":[{"href":"https:\/\/joyfulteams.shop\/wp-json\/wc\/v3\/customers"}]}},
+  </code></pre><br>
+
+  <p>
+    You can now perform a text-search in the content, or just match it with what you've got in your WP panel, to see
+    if you've successfully registered a new customer.<br><br>
+
+    In pt.2, we'll discuss how the login request works.
+  </p><br>
+</div>
+
+<div class="page_footer">
+  <footer>
+    <div class="up_container">
+      <div class="up_left box">
+        <h2>Follow Me</h2>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="up_middle box">
+        <h2>Contact</h2>
+        <div class="my_email">
+          <div>
+            <p><i class="fa-regular fa-envelope"></i></p>
+            <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">Mail me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="up_right box">
+        <h2>Find More</h2>
+        <a href="#">Feedback</a><br>
+        <a href="#">License</a><br>
+        <a href="#">Code Repository</a><br>
+        <a href="#">TechLauncher Recruitment</a>
+      </div>
+    </div>
+
+    <div class="bottom_container">
+      Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
