@@ -4,9 +4,9 @@ let canvas;
 let canvasWidth, canvasHeight;
 
 function setup() {
-    canvasWidth = windowWidth;
-    canvasHeight = windowHeight;
-    canvas = createCanvas(canvasWidth - 8, canvasHeight);
+    canvasWidth = windowWidth - 8;
+    canvasHeight = windowHeight - 8;
+    canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.style('position', 'fixed');
     canvas.style('left', '0');
     canvas.style('top', '0');

@@ -4,10 +4,8 @@ html {
 
 .page_footer {
   max-width: 100%;
-  background-color: #24262B;
+  background-color: rgba(36, 38, 43, 0.5);
 }
-
-
 
 .page_footer {
   margin: 0;
@@ -87,6 +85,7 @@ html {
 .page_footer .up_container .up_left hr {
   margin: 10px 50px 10px 0;
 }
+
 .page_footer .up_container .up_left a {
   text-decoration: none;
   color: #D3D3D3;
@@ -147,7 +146,3 @@ html {
   text-align: center;
   color: gray;
 }
-
-
-
-

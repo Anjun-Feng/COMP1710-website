@@ -2,17 +2,82 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 a {
   text-decoration: none;
 }
 
-/* uses grid for display */
 body {
-  /* Makes the background image cover the entire element. */
   background-size: 100%;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 50px 0 50px;
+}
+
+/* Basic styling for nav elements */
+nav {
+  display: flex;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+}
+
+/* Style for top-level nav menu links */
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+}
+
+nav ul li a:hover {
+  background-color: #ddd;
+}
+
+/* Style for the dropdown menus */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+nav ul li ul li a {
+  padding: 8px 12px;
+}
+
+/* Show the dropdown menu on hover */
+nav ul li:hover > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for nested dropdown menus */
+nav ul li ul li ul {
+  left: 100%;
+  top: 0;
 }

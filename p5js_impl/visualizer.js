@@ -2,7 +2,7 @@
  * @author Anjun Feng
  * @date-created 15/7/2020
  * @last-edited 10/4/2023
- * @description Using p5.js to create a sound visualizer.
+ * @description Using p5.p5js_impl to create a sound visualizer.
  *      It reads from volume of user's mic as input, and using FFT to transform
  *      the input to numeric values that can be visualized.
  */
@@ -13,7 +13,7 @@ let stars = [];
 let starImages = [];
 
 /**
- * p5.js built-in function. It preloads specified assets.
+ * p5.p5js_impl built-in function. It preloads specified assets.
  * While preloading, the sketch will not start. A loading screen will be shown if specified.
  *
  */
@@ -24,7 +24,7 @@ function preload() {
 }
 
 /**
- * p5.js built-in function. It is used for initializing variables and performing setup tasks
+ * p5.p5js_impl built-in function. It is used for initializing variables and performing setup tasks
  * after the assets have been loaded and before the main loop `draw()` begins.
  */
 function setup() {
@@ -52,7 +52,7 @@ function setup() {
 }
 
 /**
- * p5.js built-in function. Allows the window to resize to a specified width and height.
+ * p5.p5js_impl built-in function. Allows the window to resize to a specified width and height.
  */
 function windowResized() {
     canvasWidth = windowWidth;
@@ -73,7 +73,7 @@ function initMic() {
 
 
 /**
- * p5.js built-in function. Draws the content each frame rate.
+ * p5.p5js_impl built-in function. Draws the content each frame rate.
  *
  */
 function draw() {
@@ -84,7 +84,7 @@ function draw() {
 }
 
 /**
- * p5.js built-in function. Specifies what event will occur once a mouse button is pressed.
+ * p5.p5js_impl built-in function. Specifies what event will occur once a mouse button is pressed.
  */
 function mousePressed() {
     userStartAudio(); // Used for only IOS and Chrome

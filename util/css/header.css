@@ -5,11 +5,12 @@
 }
 
 .navbar {
-  background-color: rgba(45, 44, 44, 0.5);
+  background-color: transparent;
 }
 
 /* Styles the header section */
 .navbar header {
+  background-color: transparent;
   /* Uses the custom font for the header */
 
   /* Positions the header at the top of the page and make it fixed */
@@ -31,13 +32,12 @@
 }
 
 
-
 /* Styles the logo */
 .navbar header .logo {
   font-family: nice_sugar;
   /* Sets the color of the logo to a semi-transparent shade of green */
   /*color: rgba(189, 225, 195, 0.96);*/
-  color: white;
+  color: black;
   /* Positions the logo relatively */
   position: relative;
   /* Sets the font size for the logo */
@@ -82,7 +82,7 @@
 .navbar header ul li a {
   /* Sets the color of the anchor tags to white */
   /*color: #ffffff;*/
-  color: white;
+  color: black;
   /* Positions the anchor tags relatively */
   position: relative;
   /* Adds margin to the left and right of the anchor tags */

@@ -6,40 +6,48 @@
   <title>My Passion</title>
 
   <!-- Import Section-->
-  <link rel="stylesheet" type="text/css" href="util/transparent_header.css">
-  <link rel="stylesheet" type="text/css" href="./util/transparent_footer.css">
-  <link rel="stylesheet" type="text/css" href="./util/scrollbar.css">
-
+  <link rel="stylesheet" type="text/css" href="util/css/transparent_header.css">
+  <link rel="stylesheet" type="text/css" href="util/css/transparent_footer.css">
+  <link rel="stylesheet" type="text/css" href="util/css/scrollbar.css">
+<!--  <link rel="stylesheet" type="text/css" href="util/css/search.css">-->
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-  <script src="./lib/p5.sound.js"></script>
-<!--  <script type="text/javascript" src="js/snowing.js"></script>-->
-<!--  <script type="text/javascript" src="js/snowflake.js"></script>-->
-  <script type="text/javascript" src="js/shootingStars.js"></script>
-
+  <script type="text/javascript" src="./lib/p5.js"></script>
+  <script type="text/javascript" src="./lib/p5.sound.js"></script>
+  <script type="text/javascript" src="p5js_impl/shootingStars.js"></script>
+  <script type="text/javascript" src="./util/js/search.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="navbar">
     <header>
-      <a href="#" class="logo" id="microphone-link">&lt;My Passion&gt;</a>
+      <div id="logo_container">
+        <a href="#" class="logo">Fluttee</a>
+      </div>
 
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./pages/dart.html">
-          <i class="devicon-dart-plain-wordmark"></i>
-        </a></li>
-        <li><a href="./pages/sourcelog.html">Source Log</a></li>
-        <li><a href="./pages/sitemap.html">Site Map</a></li>
-        <li><a href="./assignment.html">Assignment</a></li>
-      </ul>
+      <div id="search_container">
+        <input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
+        <div id="results"></div>
+      </div>
+
+      <div id="links_container">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/dart.html">
+            <i class="devicon-dart-plain-wordmark"></i>
+          </a></li>
+          <li><a href="./pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="./pages/sitemap.html">Sitemap</a></li>
+          <li><a href="./assignment.html">Assignment</a></li>
+        </ul>
+      </div>
     </header>
   </div>
 
   <div class="content">
     <!-- Create a container for welcome-->
+
 
     <div class="introduction_content">
       <div class="welcome">
