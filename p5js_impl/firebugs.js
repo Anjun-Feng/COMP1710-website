@@ -1,8 +1,19 @@
+/**
+ * Author: Anjun Feng
+ * Date-created: 6/4/2023
+ * Last-edited: 20/4/2023
+ * Description:
+ * Using p5.js to create a firefly scene.
+ */
 let fireflies = [];
 let fireflyCount = 100;
 let canvas;
 let canvasWidth, canvasHeight;
 
+/**
+ * p5.js built-in function. It is used for initializing variables and performing setup tasks
+ * after the assets have been loaded and before the main loop `draw()` begins.
+ */
 function setup() {
     canvasWidth = windowWidth - 8;
     canvasHeight = windowHeight - 8;
@@ -19,20 +30,29 @@ function setup() {
     }
 }
 
+/**
+ * p5.js built-in function. Allows the window to resize to a specified width and height.
+ */
 function windowResized() {
     canvasWidth = windowWidth;
     canvasHeight = windowHeight;
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
+/**
+ * p5.js built-in function. Draws the content each frame rate.
+ */
 function draw() {
     background(0);
     for (let firefly of fireflies) {
         firefly.update();
-        firefly.display();
+        firefly.show();
     }
 }
 
+/**
+ * A class that represents a firefly.
+ */
 class Firefly {
     constructor() {
         this.x = random(width);
@@ -44,6 +64,9 @@ class Firefly {
         this.alphaChange = random(1, 5);
     }
 
+    /**
+     * Updates the position and alpha of the firefly.
+     */
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
@@ -62,7 +85,10 @@ class Firefly {
         }
     }
 
-    display() {
+    /**
+     * Visualizes the firefly.
+     */
+    show() {
         noStroke();
         fill(255, 255, 0, this.alpha);
         ellipse(this.x, this.y, this.size);

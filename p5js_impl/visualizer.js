@@ -1,10 +1,11 @@
 /**
- * @author Anjun Feng
- * @date-created 15/7/2020
- * @last-edited 10/4/2023
- * @description Using p5.p5js_impl to create a sound visualizer.
- *      It reads from volume of user's mic as input, and using FFT to transform
- *      the input to numeric values that can be visualized.
+ * Author： Anjun Feng
+ * Date-created 15/7/2020
+ * Last-edited 10/4/2023
+ * Description:
+ * Using p5.js to create a sound visualizer.
+ * It reads from volume of user's mic as input, and using FFT to transform
+ * the input to numeric values that can be visualized.
  */
 
 let mic, micFft, micWaveAmp;
@@ -13,7 +14,7 @@ let stars = [];
 let starImages = [];
 
 /**
- * p5.p5js_impl built-in function. It preloads specified assets.
+ * p5.js built-in function. It preloads specified assets.
  * While preloading, the sketch will not start. A loading screen will be shown if specified.
  *
  */
@@ -24,7 +25,7 @@ function preload() {
 }
 
 /**
- * p5.p5js_impl built-in function. It is used for initializing variables and performing setup tasks
+ * p5.js built-in function. It is used for initializing variables and performing setup tasks
  * after the assets have been loaded and before the main loop `draw()` begins.
  */
 function setup() {
@@ -38,9 +39,9 @@ function setup() {
     angleMode(DEGREES);
     background(0);
 
-    getAudioContext().suspend();
+    getAudioContext().suspend(); // suspend audio context on page load
     let mySynth = new p5.MonoSynth();
-    mySynth.play('A6');
+    mySynth.play('A6'); //play a note when the audio is allowed to start
 
     initMic();
 
@@ -52,7 +53,7 @@ function setup() {
 }
 
 /**
- * p5.p5js_impl built-in function. Allows the window to resize to a specified width and height.
+ * p5.js built-in function. Allows the window to resize to a specified width and height.
  */
 function windowResized() {
     canvasWidth = windowWidth;
@@ -73,7 +74,7 @@ function initMic() {
 
 
 /**
- * p5.p5js_impl built-in function. Draws the content each frame rate.
+ * p5.js built-in function. Draws the content each frame rate.
  *
  */
 function draw() {
@@ -84,7 +85,7 @@ function draw() {
 }
 
 /**
- * p5.p5js_impl built-in function. Specifies what event will occur once a mouse button is pressed.
+ * p5.js built-in function. Specifies what event will occur once a mouse button is pressed.
  */
 function mousePressed() {
     userStartAudio(); // Used for only IOS and Chrome
@@ -95,18 +96,16 @@ function mousePressed() {
  */
 function visualize() {
     push();
-
     stroke(255);
     noFill();
     translate(width/2, height/2);
-    // micVolume = mic.getLevel();
     micFft.analyze();
     micWaveAmp = micFft.getEnergy(20, 720);
     var micWave = micFft.waveform();
 
-    // draws the innermost right half-circle
+    /* --------------------------- begin inner circle --------------------------- */
     beginShape();
-    for (var n = 0; n <= 180; n += 0.3) {
+    for (var n = 0; n <= 180; n += 0.3) { // draws the
         var i = floor(map(n, 0, 180, 0, micWave.length - 1));
         var radius = map(micWave[i], -1, 1, width/100, width/50)
         var waveX = radius * sin(n);
@@ -116,7 +115,6 @@ function visualize() {
     }
     endShape();
 
-    // draws the innermost left half-circle
     beginShape();
     for (var n = 0; n <= 180; n += 0.3) {
         var i = floor(map(n, 0, 180, 0, micWave.length - 1));
@@ -127,8 +125,10 @@ function visualize() {
         vertex(waveX, waveY);
     }
     endShape();
+    /* --------------------------- end outer circle --------------------------- */
 
-    // draws the outer circle
+
+    /* --------------------------- begin outer circle --------------------------- */
     beginShape();
     for (var n = 0; n <= 180; n += 0.3) {
         var i = floor(map(n, 0, 180, 0, micWave.length - 1));
@@ -152,6 +152,8 @@ function visualize() {
         vertex(waveX, waveY);
     }
     endShape();
+    /* --------------------------- end outer circle --------------------------- */
+
     
     // draws the stars
     stars.push(new WaveParticle(starImages));
@@ -162,7 +164,7 @@ function visualize() {
             stars[i].accUp(micWaveAmp > 120)
         }
 
-        if (stars[i].bouncing()) {
+        if (stars[i].bouncing()) { // removes the stars that have reached the edge of the canvas
             stars.splice(i, 1)
         }
     }
@@ -224,6 +226,10 @@ class WaveParticle {
         }
     }
 
+    /**
+     * Accelerates the particle up
+     * @param num the number of times the particle will be accelerated up
+     */
     multiplier(num) {
         for (let i = 0; i < num; i++) {
             this.pos.add(this.speed)

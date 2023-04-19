@@ -13,15 +13,14 @@
   <script src="../lib/p5.js"></script>
   <script src="../lib/p5.sound.js"></script>
   <script type="text/javascript" src="../p5js_impl/snowing.js"></script>
-  <script type="text/javascript" src="../p5js_impl/snowflake.js"></script>
+<!--  <script type="text/javascript" src="../p5js_impl/snowflake.js"></script>-->
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../p5js_impl/submit.js"></script>
+  <script type="text/javascript" src="../util/js/submit.js"></script>
 
   <title>Your Experience</title>
 </head>
 
 <body>
-
   <div class="navbar">
     <header>
       <a class="logo">&lt;My Passion&gt;</a>
@@ -39,7 +38,7 @@
 
   <!-- creates a container for the form -->
   <div class="form_container">
-    <form onsubmit="return showConf()">
+    <form id="emailForm">
       <p>Your Experience</p>
       <label for="user_name"></label>
       <input class="content" id="user_name" type="text" placeholder="Preferred Name">
@@ -50,13 +49,12 @@
       <br>
 
       <label for="user_suggestion"></label>
-      <textarea class="content" id="user_suggestion" placeholder="Feel free to talk to us!"></textarea>
+      <textarea class="content" id="user_suggestion" placeholder="Feel free to provide some feed back!"></textarea>
       <br>
 
       <input type="submit" value="Submit">
-      <input type="button" value="Clear" onclick = "clearTextBoxes()"; return false;>
+      <input type="button" value="Clear" onclick="clearTextBoxes(); return false;">
     </form>
-  
   </div>
 
   <div class="page_footer">

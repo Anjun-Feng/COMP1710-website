@@ -12,6 +12,9 @@
   <link rel="stylesheet" type="text/css" href="../util/css/footer.css">
   <link rel="stylesheet" type="text/css" href="../css/sourcelog.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script type="text/javascript" src="../lib/p5.js"></script>
+  <script type="text/javascript" src="../lib/p5.sound.js"></script>
+  <script type="text/javascript" src="../p5js_impl/shootingStars.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
 
 </head>
@@ -34,113 +37,188 @@
 
   <!-- creates a container for source log table -->
   <div class="content">
-    <!-- creates the table for source log -->
-    <table class="source_log">
-      <thead>
+    <div class="source-log-container">
+      <table>
+        <thead>
         <tr>
-          <th width="10%">NAME</th>
-          <th width="15%">TYPE & USAGE</th>
-          <th width="45%">SOURCE</th>
-          <th width="15%">LICENSE</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Source</th>
+          <th>License</th>
+          <th>Alteration</th>
         </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
+
         <tr>
-          <td>LMM</td>
-          <td>font for Source Log</td>
+          <td>
+            A font called "Latin Modern Math"
+            used in the source log to give
+            the table a computer-science look.
+          </td>
+          <td>Font</td>
           <td>https://www.gust.org.pl/projects/e-foundry/lm-math</td>
           <td>GUST Font License</td>
+          <td>Raw use</td>
         </tr>
 
         <tr>
-          <td>hug love</td>
-          <td>font for welcome</td>
-          <td>https://www.dafont.com/huglove.font</td>
-          <td>Free to Use</td>
-        </tr>
-
-        <tr>
-          <td>nice sugar</td>
-          <td>font for navbar</td>
-          <td>https://www.dafont.com/nice-sugar.font</td>
-          <td>Free to Use</td>
-        </tr>
-
-        <tr>
-          <td>my cat</td>
-          <td>headset in Home</td>
+          <td>
+            The cat headset in the home page.
+            The photo was taken by me last
+            year when I was in my hometown.
+          </td>
+          <td>Image</td>
           <td>My photo</td>
           <td>N/A</td>
+          <td>
+            The size and ratio was changed
+            to best fit as a headset.
+            </td>
         </tr>
 
         <tr>
-          <td>Echoes cover</td>
-          <td>img used for the gallery</td>
-          <td>https://pinkfloydhyperbase.dk/illu/covers/echoes.jpg</td>
-          <td>fair use</td>
+          <td>
+            The covers of Pink Floyd's
+            album "Wish you were here". Used in
+            Dart.html as the first cover.
+          </td>
+          <td>Image</td>
+          <td>https://www.reddit.com/r/pinkfloyd/comments/ncqepp/the_original_and_controversial_album_cover_of/</td>
+          <td>Fair Use</td>
+          <td>
+            The size and the ratio was changed
+            to fit as a cover.
+          </td>
         </tr>
 
         <tr>
-          <td>In the court... cover</td>
-          <td>img used for the gallery</td>
-          <td>https://www.dgmlive.com/news/51%20years%20old%20today%20In%20The%20Court%20Of%20King%20Crimson</td>
-          <td>fair use</td>
+          <td>
+            An outtake from Pink Floyd's
+            album "Wish you were here". Used in
+            Dart.html as the second cover.
+          </td>
+          <td>Image</td>
+          <td>https://amateurphotographer.com/iconic-images/great-album-photography-wish-you-were-here-pink-floyd/</td>
+          <td>Fair use</td>
+          <td>
+            The size and the ratio was changed
+            to fit as a cover.
+          </td>
         </tr>
 
         <tr>
-          <td>dark side of moon cover</td>
-          <td>img used for the gallery</td>
-          <td>https://commons.wikimedia.org/wiki/File:The_Dark_Side_of_the_Moon_Cover.svg</td>
-          <td>free of copyright restrictions</td>
+          <td>
+            The cover of David Bowie's album
+            "Ziggy Stardust". Used in
+            Dart.html as the fifth cover.
+          </td>
+          <td>Image</td>
+          <td>https://ultimateclassicrock.com/david-bowie-ziggy-stardust-album/</td>
+          <td>Fair Use</td>
+          <td>
+            I compressed the image to
+            make it have a smaller size.
+            I also changed the ratio to
+            1:1 so it better fits as a
+            cover.
+          </td>
         </tr>
 
-        <tr>
-          <td>user your illusion 1 cover</td>
-          <td>img used for the gallery</td>
-          <td>https://www.subjectivesounds.com/musicblog/2020/4/21/guns-n-roses-use-your-illusion-i-album-review</td>
-          <td>free to use</td>
-        </tr>
 
         <tr>
-          <td>sgt. pepper... cover</td>
-          <td>img used for the gallery</td>
-          <td>https://www.pvccfinearts.com/blog/2017/2/16/the-sgt-peppers-project-lecture-1</td>
-          <td>free to use</td>
-        </tr>
-
-        <tr>
-          <td>easterwood cover</td>
-          <td></td>
+          <td>
+            A photo of Clint Eastwood taken
+            in his move "A Fistful of Dollars".
+            Used in Dart.html as the fourth
+            cover.
+          </td>
+          <td>Image</td>
           <td>https://wetheitalians.com/default/clint-eastwood-and-italian-western-influence</td>
+          <td>Fair use</td>
           <td></td>
         </tr>
 
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            One of the covers of Pink Floyd's
+            song "Echoes" from the album
+            "Meddle". Used in Dart.html as the
+            fifth cover.
+          </td>
+          <td>Image</td>
+          <td>https://www.pinterest.com.au/pin/498140408769900456/</td>
+          <td>Fair use</td>
+          <td>
+            The image ratio was altered to fit
+            as a cover. The size was reduced
+            to avoid the white border.
+          </td>
         </tr>
 
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            One of the covers of Pink Floyd's
+            song "Echoes" from the album
+            "Meddle". Used in Dart.html as the
+            sixth cover.
+          </td>
+          <td>Image</td>
+          <td>https://sfae.com/Artists/Storm-Thorgerson/Pink-Floyd-em-Echoes-em-III-Compilation-Album-Art</td>
+          <td>Fair use</td>
+          <td>
+            The image ratio was altered to fit
+            as a cover.
+          </td>
         </tr>
 
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            The cover of Guns N' Roses' album
+            "Use Your Illusion I". Used in
+            Dart.html as the seventh cover.
+          </td>
+          <td>Image</td>
+          <td>https://www.subjectivesounds.com/musicblog/2020/4/21/guns-n-roses-use-your-illusion-i-album-review</td>
+          <td>Fair Use</td>
+          <td>
+            I compressed the image to reduce
+            its size. I also changed the ratio
+            to 1:1 so it better fits as a cover.
+          </td>
         </tr>
 
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            The cover of Guns N' Roses' album
+            "Use Your Illusion II". Used in
+            Dart.html as the eighth cover.
+          </td>
+          <td>Image</td>
+          <td>https://www.pinterest.com.au/pin/303359724898945393/</td>
+          <td>Fair use</td>
+          <td>
+            I compressed the image to reduce
+            its size and trimmed the image
+            to remove the white border.
+            I also changed the ratio to 1:1
+            so it better fits as a cover.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            The cover of Led Zeppelin's album
+            "Led Zeppelin IV". Used in Dart.html
+            as the ninth cover.
+          </td>
+          <td>Image</td>
+          <td>https://www.thisdayinmusic.com/classic-albums/led-zeppelin-led-zeppelin-iv/</td>
+          <td>Fair use</td>
+          <td>
+            The size and the ratio was changed
+            to fit as a cover.
+          </td>
         </tr>
 
         <tr>
@@ -148,6 +226,9 @@
           <td>Twitter icon in footer</td>
           <td>https://fontawesome.com/icons/twitter?f=brands&s=solid</td>
           <td>SIL OFL 1.1</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
@@ -155,6 +236,9 @@
           <td>WeChat icon in footer</td>
           <td>https://fontawesome.com/icons/whatsapp?f=brands&s=solid</td>
           <td>SIL OFL 1.1</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
@@ -162,6 +246,9 @@
           <td>GitHub icon in footer</td>
           <td>https://fontawesome.com/icons/github?f=brands&s=solid</td>
           <td>SIL OFL 1.1</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
@@ -169,6 +256,9 @@
           <td>Instagram icon in footer</td>
           <td>https://fontawesome.com/icons/instagram?f=brands&s=solid</td>
           <td>SIL OFL 1.1</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
@@ -176,134 +266,134 @@
           <td>Mailbox icon in footer</td>
           <td>https://fontawesome.com/icons/envelope?f=classic&s=regular</td>
           <td>SIL OFL 1.1</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
           <td>Dart icon</td>
           <td>Dart icon in header</td>
           <td>https://devicon.dev/</td>
-          <td>MIT License</td>
-        </tr>
-
-        <!-- -------------------------------------->
-        <tr>
-          <td>Golang img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icon/44442/golang</td>
-          <td>free to use</td>
+          <td>MIT</td>
+          <td>
+            Raw use
+          </td>
         </tr>
 
         <tr>
-          <td>Java img</td>
-          <td>img in photo gallery</td>
+          <td>Java img in Dart.html</td>
+          <td>Image</td>
           <td>https://icons8.com/icon/13679/java</td>
           <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
 
         <tr>
-          <td>ionic img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icons/set/ionic</td>
-          <td>free to use</td>
+          <td>Kotlin img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/ZoxjA0jZDdFZ/kotlin</td>
+          <td>Free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
 
         <tr>
-          <td>Dart img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icon/7AFcZ2zirX6Y/dart</td>
-          <td>free to use</td>
-        </tr>
-
-        <tr>
-          <td>Flutter img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icon/7I3BjCqe9rjG/flutter</td>
-          <td>free to use</td>
-        </tr>
-
-        <tr>
-          <td>Ruby img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icon/BHBg1MpYDruK/ruby-programming-language</td>
-          <td>free to use</td>
-        </tr>
-
-        <tr>
-          <td>C++ img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icon/7I3BjCqe9rjG/flutter</td>
-          <td>free to use</td>
-        </tr>
-
-        <tr>
-          <td>Swift img</td>
-          <td>img in photo gallery</td>
+          <td>Swift img in Dart.html</td>
+          <td>Image</td>
           <td>https://icons8.com/icon/24465/swift</td>
           <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
 
         <tr>
-          <td>React Native img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icons/set/React-Native</td>
+          <td>Javascript img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/108784/javascript</td>
           <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
 
         <tr>
-          <td>Qt img</td>
-          <td>img in photo gallery</td>
-          <td>https://icons8.com/icons/set/Qt-</td>
+          <td>Ruby img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/BHBg1MpYDruK/ruby-programming-language</td>
           <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
 
         <tr>
-        <td>Kotlin img</td>
-        <td>img in photo gallery</td>
-        <td>https://icons8.com/icon/ZoxjA0jZDdFZ/kotlin</td>
-        <td>free to use</td>
+          <td>Golang img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/fAMVO_fuoOuC/php-logo</td>
+          <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
         </tr>
-      </tbody>
-    </table>
+
+
+        <tr>
+          <td>C++ img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/7I3BjCqe9rjG/flutter</td>
+          <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Python img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/13441/python</td>
+          <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Golang img in Dart.html</td>
+          <td>Image</td>
+          <td>https://icons8.com/icon/44442/golang</td>
+          <td>free to use</td>
+          <td>
+            Altered size and ratio to fit
+            the overall appearance.
+          </td>
+        </tr>
+
+
+
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <div class="page_footer">
-    <footer>
-      <div class="up_container">
-        <div class="up_left box">
-          <h2>Follow Me</h2>
-          <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-          </ul>
-        </div>
-
-        <div class="up_middle box">
-          <h2>Contact</h2>
-          <div class="my_email">
-            <div>
-              <p><i class="fa-regular fa-envelope"></i></p>
-              <a href="#">u7277205@anu.edu.au</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="up_right box">
-          <h2>Find More</h2>
-          <a href="#">Feedback</a><br>
-          <a href="#">License</a><br>
-          <a href="#">Code Repository</a><br>
-          <a href="#">TechLauncher Recruitment</a>
-        </div>
-      </div>
-
-      <div class="bottom_container">
-        Apache 2.0 License Applied. ALl content created by Pathfinder6969.
-      </div>
-    </footer>
-  </div>
-
 </body>
 </html>

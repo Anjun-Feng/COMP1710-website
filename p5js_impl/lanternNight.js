@@ -1,7 +1,18 @@
+/**
+ * Author: Anjun Feng
+ * Date-created: 6/4/2023
+ * Last-edited: 20/4/2023
+ * Description:
+ * Using p5.js to create a lantern night scene.
+ */
+
 let canvas;
 let canvasWidth, canvasHeight;
 const lanterns = [];
 
+/**
+ * p5.js built-in function. Allows the window to resize to a specified width and height.
+ */
 function setup() {
     canvasWidth = windowWidth;
     canvasHeight = windowHeight;
@@ -14,12 +25,18 @@ function setup() {
     canvas.style('height', '100%');
 }
 
+/**
+ * p5.js built-in function. Allows the window to resize to a specified width and height.
+ */
 function windowResized() {
     canvasWidth = windowWidth;
     canvasHeight = windowHeight;
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
+/**
+ * p5.js built-in function. Draws the content each frame rate.
+ */
 function draw() {
     background(20, 20, 50);
 
@@ -30,7 +47,7 @@ function draw() {
     for (let i = lanterns.length - 1; i >= 0; i--) {
         const lantern = lanterns[i];
         lantern.update();
-        lantern.display();
+        lantern.show();
 
         if (lantern.isOffscreen()) {
             lanterns.splice(i, 1);
@@ -38,6 +55,9 @@ function draw() {
     }
 }
 
+/**
+ * A class that represents a lantern.
+ */
 class Lantern {
     constructor() {
         this.pos = createVector(random(width), height + random(height * 0.5));
@@ -47,12 +67,18 @@ class Lantern {
         this.animationOffset = random(TWO_PI);
     }
 
+    /**
+     * Updates the lantern's position.
+     */
     update() {
         this.pos.y -= this.speed;
         this.pos.x += sin(frameCount * 0.01 + this.animationOffset) * 0.5;
     }
 
-    display() {
+    /**
+     * Visualizes the lantern.
+     */
+    show() {
         push();
         translate(this.pos.x, this.pos.y);
         rotate(sin(frameCount * 0.01 + this.animationOffset) * 0.2);
@@ -72,6 +98,10 @@ class Lantern {
         pop();
     }
 
+    /**
+     * Checks if the lantern is offscreen.
+     * @returns {boolean} True if the lantern is offscreen, false otherwise.
+     */
     isOffscreen() {
         return this.pos.y < -this.size;
     }

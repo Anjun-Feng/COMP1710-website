@@ -26,11 +26,6 @@ ol, ul {
   margin-right: auto;
 }
 
-/* Makes such classes limit in width in .content */
-/*.content .width_limit {*/
-/*  width: 70%;*/
-/*}*/
-
 .content .dart_intro {
   margin-top: 20px;
 }
@@ -109,9 +104,7 @@ ol, ul {
 
 .img_gallery .row .block img, .description {
   width: 80%;
-
   max-width: 100%;
-
   object-fit: cover;
 }
 

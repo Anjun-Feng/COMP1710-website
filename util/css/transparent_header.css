@@ -27,6 +27,8 @@
 #search_container {
   transform: translateX(0%);
   display: inline-block;
+  margin-right: auto;
+  margin-left: 30px;
   padding: 5px;
   background-color: rgb(36, 41, 47);
   border: 1px solid rgb(87, 96, 106);
