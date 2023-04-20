@@ -6,7 +6,6 @@
 
 /* uses grid for display */
 body {
-  background: honeydew;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -15,4 +14,5 @@ body {
 .content .img_map_container {
   display: flex;
   justify-content: center;
+  margin: 30px 0 30px 0;
 }

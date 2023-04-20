@@ -49,6 +49,9 @@ class Star {
         this.twinkleSpeed = random(0.02, 0.1);
         this.angle = random(TWO_PI);
         this.respawnTimer = random(100, 200);
+        this.alpha = 255;
+        this.fadeSpeed = 2; // Lower the fade speed for slower fading in and out
+        this.fadingOut = false;
     }
 
     resetStar() {
@@ -66,13 +69,25 @@ class Star {
         this.respawnTimer--;
 
         if (this.respawnTimer <= 0) {
-            this.resetStar();
-            this.respawnTimer = random(100, 200);
+            if (this.fadingOut) {
+                this.alpha -= this.fadeSpeed;
+                if (this.alpha <= 0) {
+                    this.resetStar();
+                    this.respawnTimer = random(100, 200);
+                    this.fadingOut = false;
+                }
+            } else {
+                this.alpha += this.fadeSpeed;
+                if (this.alpha >= 255) {
+                    this.alpha = 255;
+                    this.fadingOut = true;
+                }
+            }
         }
     }
 
     display() {
-        let c = color(red(this.color), green(this.color), blue(this.color), this.brightness);
+        let c = color(red(this.color), green(this.color), blue(this.color), this.brightness * this.alpha / 255);
         noStroke();
         fill(c);
         ellipse(this.pos.x, this.pos.y, this.size);

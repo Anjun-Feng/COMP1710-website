@@ -33,10 +33,18 @@ body {
   display: flex;
   flex-direction: column;
   width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #D3D3D3;
+  margin: 30px auto 30px auto;
+  background: rgba(190, 187, 187, 0.1);
+  backdrop-filter: blur(10px);
   padding: 0 50px 0 50px;
+}
+
+.content p {
+  color: rgb(217, 211, 211);
+}
+
+.content h2, h3, h4 {
+  color: rgb(206, 220, 207);
 }
 
 .content .text {
@@ -44,9 +52,10 @@ body {
 }
 
 .content .inline_code {
-  background: #F3F4F4;
+  background: rgb(59, 67, 82, 0.5);
   font-family: 'Consolas', monospace;
   white-space: pre;
+  padding: 2px 11px 1px 5px;
 }
 
 .content .in_text_img {
@@ -56,4 +65,24 @@ body {
 
 .content .img_container img {
   width: 200px;
+}
+
+/* Overwrite some of the rules of the Prism.min.css */
+pre {
+  background: rgb(59, 67, 82, 0.5) !important;
+}
+
+pre code {
+  /*font-family: "Fira Code", monospace !important;*/
+  text-shadow: none !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+pre code {
+  color: #c9a1a1 !important;
+}
+
+/* class="token oprator" */
+.operator {
+  background: none !important;
 }

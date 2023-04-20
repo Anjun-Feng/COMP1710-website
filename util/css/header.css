@@ -1,16 +1,9 @@
-/* Defines a custom font called nice_sugar and provide its path */
-@font-face {
-  font-family: nice_sugar;
-  src: url("../assets/fonts/nice_sugar.otf");
-}
-
 .navbar {
-  background-color: transparent;
+  background-color: rgba(45, 44, 44);
 }
 
 /* Styles the header section */
 .navbar header {
-  background-color: transparent;
   /* Uses the custom font for the header */
 
   /* Positions the header at the top of the page and make it fixed */
@@ -31,13 +24,69 @@
   font-size: 80px;
 }
 
+#search_container {
+  transform: translateX(0%);
+  display: inline-block;
+  margin-right: auto;
+  margin-left: 30px;
+  padding: 5px;
+  background-color: rgb(36, 41, 47);
+  border: 1px solid rgb(87, 96, 106);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#search_input {
+  color: white;
+  background-color: rgb(36, 41, 47);
+  width: 200px;
+  padding: 6px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+#results {
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  background-color: rgb(36, 41, 47); /* 设置结果栏背景为白色 */
+  border: 1px solid rgb(87, 96, 106);
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+}
+
+#results a {
+  color: white;
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  white-space: nowrap; /* 防止搜索结果折行 */
+}
+
+#results a:last-child {
+  border-bottom: none;
+}
+
+#results a:hover {
+  background-color: rgba(213, 241, 202, 0.34);
+}
+
 
 /* Styles the logo */
 .navbar header .logo {
   font-family: nice_sugar;
   /* Sets the color of the logo to a semi-transparent shade of green */
   /*color: rgba(189, 225, 195, 0.96);*/
-  color: black;
+  color: white;
   /* Positions the logo relatively */
   position: relative;
   /* Sets the font size for the logo */
@@ -82,7 +131,7 @@
 .navbar header ul li a {
   /* Sets the color of the anchor tags to white */
   /*color: #ffffff;*/
-  color: black;
+  color: white;
   /* Positions the anchor tags relatively */
   position: relative;
   /* Adds margin to the left and right of the anchor tags */
@@ -90,32 +139,3 @@
   /* Removes the underline from the anchor tags */
   text-decoration: none;
 }
-
-/*.navbar * {*/
-/*  background: transparent;*/
-/*}*/
-
-/*.navbar header {*/
-/*  background-color: transparent;*/
-/*}*/
-
-/*.navbar header .logo {*/
-/*  background: transparent;*/
-/*}*/
-/*.navbar header .logo .ul {*/
-/*  background: transparent;*/
-/*}*/
-
-/*.navbar header .logo .ul li {*/
-/*  background: transparent;*/
-/*}*/
-
-/*.navbar header .logo .ul li a {*/
-/*  background: transparent;*/
-
-/*}*/
-
-/*.navbar header .logo .ul li a i {*/
-/*  background: transparent;*/
-
-/*}*/

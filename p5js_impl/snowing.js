@@ -14,7 +14,7 @@ let snows = [];
 let gravity;
 let zOff = 0;
 let canvasWidth, canvasHeight;
-
+let pg;
 /**
  * p5.js built-in function. Allows the window to resize to a specified width and height.
  */
@@ -22,6 +22,8 @@ function setup() {
     canvasWidth = windowWidth;
     canvasHeight = windowHeight;
     canvas = createCanvas(canvasWidth - 8, canvasHeight - 8);
+    pg = createGraphics(width, height);
+
     canvas.style('position', 'fixed');
     canvas.style('left', '0');
     canvas.style('top', '0');
@@ -51,7 +53,7 @@ function windowResized() {
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(0);
+    background(23, 22, 22);
     zOff += 0.1;
 
     for (snow of snows) {
@@ -150,9 +152,10 @@ class Snowflake {
      */
     show() {
         push();
+
         translate(this.pos.x + this.xOff, this.pos.y);
         rotate(this.angle);
-        stroke(255);
+        stroke(150, 149, 149);
         strokeWeight(2);
         noFill();
 

@@ -38,7 +38,7 @@ function windowResized() {
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(20, 20, 50);
+    background(23, 22, 22);
 
     if (random() < 0.1) {
         lanterns.push(new Lantern());

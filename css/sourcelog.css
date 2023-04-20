@@ -40,8 +40,9 @@ body {
 .content .source-log-container table {
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(128, 128, 128, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
 }
 
 .content .source-log-container th, td {

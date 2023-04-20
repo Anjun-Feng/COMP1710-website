@@ -23,61 +23,42 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 50px 0 50px;
+  /*padding: 0 50px 0 50px;*/
 }
 
-/* Basic styling for nav elements */
-nav {
-  display: flex;
+.content h2, h3, li, a {
+  color: white;
 }
 
-nav ul {
-  position: relative;
-  display: flex;
-}
-
-nav ul li {
-  position: relative;
-}
-
-/* Style for top-level nav menu links */
-nav ul li a {
-  display: block;
-  padding: 10px;
-  color: #333;
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
-}
-
-nav ul li a:hover {
-  background-color: #ddd;
-}
-
-/* Style for the dropdown menus */
-nav ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 150px;
-  z-index: 1000;
-}
-
-nav ul li ul li a {
-  padding: 8px 12px;
-}
-
-/* Show the dropdown menu on hover */
-nav ul li:hover > ul {
+.content .sitemap {
   display: flex;
   flex-direction: column;
+
 }
 
-/* Style for nested dropdown menus */
-nav ul li ul li ul {
-  left: 100%;
-  top: 0;
+.content .sitemap .map-container .heading h2 {
+  font-size: 35px;
 }
+
+.content .sitemap .map-container .sites {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.content .sitemap .map-container .sites .box h3 a {
+  font-size: 25px;
+}
+
+.content .sitemap .map-container .sites .box ul {
+  padding-left: 10px;
+}
+
+.content .sitemap .map-container .sites .box ul li {
+  margin: 10px 0 15px 0;
+}
+
+

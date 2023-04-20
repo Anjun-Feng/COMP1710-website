@@ -8,13 +8,15 @@
   <title>Source Log</title>
   <!-- Import Section-->
 
-  <link rel="stylesheet" type="text/css" href="../util/css/header.css">
-  <link rel="stylesheet" type="text/css" href="../util/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/transparent_header.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/transparent_footer.css">
   <link rel="stylesheet" type="text/css" href="../css/sourcelog.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script type="text/javascript" src="../util/js/search.js"></script>
+
   <script type="text/javascript" src="../lib/p5.js"></script>
-  <script type="text/javascript" src="../lib/p5.sound.js"></script>
-  <script type="text/javascript" src="../p5js_impl/shootingStars.js"></script>
+  <script type="text/javascript" src="../p5js_impl/firebugs.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
 
 </head>
@@ -22,16 +24,25 @@
 <body>
   <div class="navbar">
     <header>
-      <a class="logo">&lt;My Passion&gt;</a>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/dart.html">
-          <i class="devicon-dart-plain-wordmark"></i>
-        </a></li>
-        <li><a href="../pages/sourcelog.html">Source Log</a></li>
-        <li><a href="../pages/sitemap.html">Site Map</a></li>
-        <li><a href="../assignment.html">Assignment</a></li>
-      </ul>
+      <div id="logo_container">
+        <a href="#" class="logo">Fluttee</a>
+      </div>
+
+      <div id="search_container">
+        <label for="search_input"></label><input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
+        <div id="results"></div>
+      </div>
+
+      <div id="links_container">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/dart.html">
+            <i class="devicon-dart-plain-wordmark"></i>
+          </a></li>
+          <li><a href="../pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="../pages/sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
     </header>
   </div>
 
@@ -60,6 +71,66 @@
           <td>https://www.gust.org.pl/projects/e-foundry/lm-math</td>
           <td>GUST Font License</td>
           <td>Raw use</td>
+        </tr>
+
+        <tr>
+          <td>
+            A font called "Fira Code" used
+            in the code blocks in subpages
+            of the Dart section to.
+          </td>
+          <td>Font</td>
+          <td>https://fonts.google.com/specimen/Fira+Code</td>
+          <td>OFL 1.1</td>
+          <td>Raw use</td>
+        </tr>
+
+        <tr>
+          <td>
+            p5 lib. Used in files in
+            "p5js_impl" to create animations.
+          </td>
+          <td>Javascript (lib)</td>
+          <td>https://p5js.org/download/</td>
+          <td>LGPLv2.1</td>
+          <td>Direct use</td>
+        </tr>
+
+        <tr>
+          <td>
+            p5 sound lib. Used in
+            "visualize.js" to get
+            audio support.
+          </td>
+          <td>Javascript (lib)</td>
+          <td>https://p5js.org/download/</td>
+          <td>LGPLv2.1</td>
+          <td>Direct use</td>
+        </tr>
+
+        <tr>
+          <td>
+            jQuery lib.
+          </td>
+          <td>Javascript (lib)</td>
+          <td>https://jquery.com/download/</td>
+          <td>MIT</td>
+          <td>Direct use</td>
+        </tr>
+
+        <tr>
+          <td>
+            A p5.js implementation of a snowing
+            scene. Where snowing.js was originally from.
+          </td>
+          <td>Javascript</td>
+          <td>https://thecodingtrain.com/challenges/88-snowfall</td>
+          <td>Free to use</td>
+          <td>
+            I dit a lot of changes to the original
+            code. Foe example using snowflakes created
+            by myself, instead of images.
+          </td>
         </tr>
 
         <tr>
@@ -394,6 +465,58 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div class="page_footer">
+    <footer>
+      <div class="up_container">
+        <div class="up_left box">
+          <h2>Follow Me</h2>
+          <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=100091622324806" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/pathfinder6996" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Anjun-Feng" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+          <hr>
+          <a href="../assignment.html">Assignment</a>
+        </div>
+
+        <div class="up_middle box">
+          <h2>Contact</h2>
+          <div>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">u7277205@anu.edu.au</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="up_right box">
+          <h2>Find More</h2>
+          <a href="../pages/feedback.html">Feedback</a><br>
+          <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
+          <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
+          <a href="#">p5.js Official</a>
+        </div>
+      </div>
+
+      <div class="bottom_container">
+        <p>
+          MIT License applied. Using any original content from this site will directly force your codebase to be licensed by MIT.
+          Copyright © 2023 Anjun.
+        </p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

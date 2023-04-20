@@ -6,11 +6,10 @@
 
 /* uses grid for display */
 body {
-
   background-size: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 @keyframes animate{
@@ -27,13 +26,14 @@ body {
 }
 
 
+
 /* Positions and styles the form container */
 .form_container {
-  position: absolute; /* Positions the element absolutely */
+  position: absolute;
   -webkit-transform: translate(-50%, -50%); /* Centers the element horizontally and vertically using a CSS transform */
   transform: translate(-50%, -50%);
-  top: 50%; /* Positions the top of the element at the vertical center of its positioned ancestor */
-  left: 50%; /* Position sthe left of the element at the horizontal center of its positioned ancestor */
+  top: 50%;
+  left: 50%;
 }
 
 /* Styles the form */

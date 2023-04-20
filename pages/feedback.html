@@ -3,19 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My Passion</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Import Section-->
-  <link rel="stylesheet" type="text/css" href="util/css/transparent_header.css">
-  <link rel="stylesheet" type="text/css" href="util/css/transparent_footer.css">
-  <link rel="stylesheet" type="text/css" href="util/css/scrollbar.css">
-  <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/transparent_header.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/transparent_footer.css">
+  <link rel="stylesheet" type="text/css" href="../css/feedback.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <script type="text/javascript" src="./lib/p5.js"></script>
-  <script type="text/javascript" src="./lib/p5.sound.js"></script>
-  <script type="text/javascript" src="p5js_impl/shootingStars.js"></script>
-  <script type="text/javascript" src="./util/js/search.js"></script>
+  <script type="text/javascript" src="../util/js/search.js"></script>
+
+  <script src="../lib/p5.js"></script>
+  <script src="../lib/p5.sound.js"></script>
+  <script type="text/javascript" src="../p5js_impl/lanternNight.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../util/js/submit.js"></script>
+
+  <title>Your Experience</title>
 </head>
 
 <body>
@@ -32,47 +36,39 @@
 
       <div id="links_container">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./pages/dart.html">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/dart.html">
             <i class="devicon-dart-plain-wordmark"></i>
           </a></li>
-          <li><a href="./pages/sourcelog.html">Sourcelog</a></li>
-          <li><a href="./pages/sitemap.html">Sitemap</a></li>
+          <li><a href="../pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="../pages/sitemap.html">Sitemap</a></li>
         </ul>
       </div>
     </header>
   </div>
 
   <div class="content">
+  <!-- creates a container for the form -->
+    <div class="form_container">
+      <form id="emailForm">
+        <p>Your Experience</p>
+        <label for="user_name"></label>
+        <input class="content" id="user_name" type="text" placeholder="Preferred Name">
+        <br>
 
-      <div id="mycat">
-        <img src="./assets/images/my_cat.jpg" alt="image of my cat used as a headset">
-      </div>
+        <label for="user_email"></label>
+        <input class="content" id="user_email" type="email" placeholder="Email">
+        <br>
 
-      <div class="text">
-        <h2>Welcome to my site!</h2>
+        <label for="user_suggestion"></label>
+        <textarea class="content" id="user_suggestion" placeholder="Feel free to provide some feed back!"></textarea>
+        <br>
 
-        <p>
-          Hi there! My name is Anjun, a third-year student from ANU, studying BIT and the major of Software Development.<br><br>
-
-          I am passionate about playing the electric guitar. I am also a cat lover. The headset above was taken from
-          my cat looking at me.<br><br>
-
-          I'm a member of the team Joyful Fashionista, which is run by ANU's TechLauncher. We are developing a mobile
-          app for users who want to sell their shelved items. The app uses Dart as the programming language and Flutter
-          as the framework. I am responsible for the backend development of the app.<br><br>
-
-          Therefore, learning to adeptly use Flutter is one of my goals for this semester. It inspires me to create
-          such a website that can share cases I have done and my learning process.
-
-
-        </p>
-      </div>
-
+        <input type="submit" value="Submit">
+        <input type="button" value="Clear" onclick="clearTextBoxes(); return false;">
+      </form>
+    </div>
   </div>
-
-
-
 
   <div class="page_footer">
     <footer>
@@ -86,7 +82,7 @@
             <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
           <hr>
-          <a href="./assignment.html">Assignment</a>
+          <a href="../assignment.html">Assignment</a>
         </div>
 
         <div class="up_middle box">
@@ -110,7 +106,7 @@
 
         <div class="up_right box">
           <h2>Find More</h2>
-          <a href="pages/feedback.html">Feedback</a><br>
+          <a href="../pages/feedback.html">Feedback</a><br>
           <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
           <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
           <a href="#">p5.js Official</a>

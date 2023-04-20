@@ -1,59 +1,29 @@
-@font-face {
-  /* Defines the huglove font family. */
-  font-family: huglove;
-
-  /* Specifies the location of the huglove font file. */
-  src: url("../assets/fonts/huglove.otf");
-}
-
-@font-face {
-  /* Defines the milyuna font family. */
-  font-family: milyuna;
-
-  /* Specifies the location of the milyuna font file. */
-  src: url("../assets/fonts/milyuna.ttf");
-}
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
 /* uses grid for display */
 body {
-  /* Makes the background image cover the entire element. */
-  background-size: 100%;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+
 }
 
 .content {
+  background: rgba(190, 187, 187, 0.05);
+  backdrop-filter: blur(10px);
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 50px 0 50px;
+  width: 800px;
+  margin: 100px auto 100px auto;
+  padding: 100px 100px 100px 100px;
 }
 
-.content .introduction_content {
-  color: white;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(128, 128, 128, 0.4);
-  margin: 5% 0 0 0;
-}
-
-.content .introduction_content #mycat img {
+.content #mycat img {
   display: flex;
   /* Rounds the corners of the image to make it circular. */
   border-radius: 50%;
@@ -63,68 +33,31 @@ body {
 
   width: 120px;
   height: auto;
-  /* Sets the opacity of the image to 0.9. */
   opacity: 0.9;
 }
 
-.content .introduction_content .welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.content .introduction_content .welcome p {
+.content .text {
   color: white;
-
-  font-family: huglove;
-  font-size: 70px;
 }
 
-.content .introduction_content #p1 {
-  font-size: 20px;
+/* Adds a fade, glowing effect to the text. */
+.content .text h2 {
   text-align: center;
+  font-size: 50px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #96e7d8, 0 0 15px #62dcf6, 0 0 20px #bb71ee, 0 0 30px #ff00de, 0 0 40px #ff00de;
+  opacity: 0;
+  animation: fadeIn 8s forwards;
 }
 
-.content .introduction_content #p2 {
-  text-align: center;
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
-.content .dart_intro {
-  margin-top: 20px;
-  background-color: rgba(128, 128, 128, 0.4);
 
-}
-
-.content .dart_intro .programming_languages {
-  margin: 5% 0 0 0;
-  color: white;
-}
-
-.content .dart_intro .programming_languages h2 {
-  color: white;
-  text-align: center;
-  margin: 0 5% 0 5%;
-}
-
-.content .dart_intro .programming_languages div {
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.content .dart_intro .programming_languages div a img {
-
-  transition: box-shadow 0.3s ease;
-}
-
-.content .dart_intro .programming_languages div a img:hover {
-  opacity: 0.7;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
-}
-
-.content .dart_intro .explanation {
-  color: white;
-  margin: 0 10% 0 10%;
-}

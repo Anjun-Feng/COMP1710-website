@@ -20,7 +20,7 @@ let starImages = [];
  */
 function preload() {
     for (var i = 0; i < 6; i++) {
-        starImages[i] = loadImage("../assets/images/stars/star_" + i + ".png");
+        starImages[i] = loadImage("assets/images/stars/star_" + i + ".png");
     }
 }
 

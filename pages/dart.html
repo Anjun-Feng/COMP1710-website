@@ -7,17 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Dart</title>
-
-
   <link rel="stylesheet" type="text/css" href="../util/css/transparent_header.css">
-  <link rel="stylesheet" type="text/css" href="../util/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/transparent_footer.css">
   <link rel="stylesheet" type="text/css" href="../css/dart.css">
+  <script type="text/javascript" src="../util/js/search.js"></script>
   <script src="../lib/p5.js"></script>
-  <script src="../lib/p5.sound.js"></script>
-<!--  <script type="text/javascript" src="../p5js_impl/visualizer.p5js_impl"></script>-->
+  <script type="text/javascript" src="../p5js_impl/snowing.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../p5js_impl/firebugs.js"></script>
 
 
 </head>
@@ -25,87 +23,83 @@
 <body>
   <div class="navbar">
     <header>
-      <a class="logo">&lt;My Passion&gt;</a>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/dart.html">
-          <i class="devicon-dart-plain-wordmark"></i>
-        </a></li>
-        <li><a href="../pages/sourcelog.html">Source Log</a></li>
-        <li><a href="../pages/sitemap.html">Site Map</a></li>
-        <li><a href="../assignment.html">Assignment</a></li>
-      </ul>
+      <div id="logo_container">
+        <a href="#" class="logo">Fluttee</a>
+      </div>
+
+      <div id="search_container">
+        <label for="search_input"></label><input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
+        <div id="results"></div>
+      </div>
+
+      <div id="links_container">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/dart.html">
+            <i class="devicon-dart-plain-wordmark"></i>
+          </a></li>
+          <li><a href="../pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="../pages/sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
     </header>
   </div>
 
   <div class="content">
-    <div class="dart_intro container">
+
+    <div class="dart_intro">
       <div class="programming_languages">
-        <h2>Why we learn Dart instead of the followings?</h2>
+        <h2>The reason you should use Dart with Flutter, instead of the followings in our app development</h2>
         <div>
           <a href="https://dev.java/"><img src="../assets/images/icons/icons8-java-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-kotlin-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-swift-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-kotlin-144.png" alt="kotlin icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-swift-144.png" alt="swift icon"></a>
+          <a href=#><img src="../assets/images/icons/icons8-android-os-144.png" alt="java icon"></a>
         </div>
         <div>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-javascript-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-ruby-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-php-logo-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-javascript-144.png" alt="js icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-ruby-144.png" alt="ruby icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-php-logo-144.png" alt="php icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-golang-144.png" alt="golang icon"></a>
+
         </div>
         <div>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-python-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-cpp-144.png" alt="java icon"></a>
-          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-golang-144.png" alt="java icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-python-144.png" alt="python icon"></a>
+          <a href="https://dev.java/"><img src="../assets/images/icons/icons8-cpp-144.png" alt="cpp icon"></a>
+          <a href=#><img src="../assets/images/icons/icons8-c-sharp-logo-144.png" alt="c sharp icon"></a>
+          <a href=#><img src="../assets/images/icons/icons8-lua-language-144.png" alt="lua icon"></a>
         </div>
       </div>
 
       <div class="explanation container">
+        <h3>The bad of others:</h3>
         <ul>
-          <li>Then we can learn to use Flutter!</li>
-          <li>It's a new-gen language - simple syntax; easy to learn</li>
-          <li>Single-threaded. Meaning there are no locks, and no usual lags from JVM (especially Android)</li>
-          <li>It supports both JIT and AOT.</li>
+          <li>Java: Popular, but a bit old, confusing and cumbersome.</li>
+          <li>Kotlin: Good in general, but requires knowledge from Java</li>
+          <li>Swift: Single platform. No good if you want a cross-platform app</li>
+          <li>Android: Single platform.</li>
+          <li>Javascript: Confusing variable scope. No good for an app design</li>
+          <li>Ruby: Lack of libs and components.</li>
+          <li>PHP: Good to learn. But it is more about network programming</li>
+          <li>Go: Good in general. Advancing quickly. Requires some time to learn.</li>
+          <li>Python: Low performance. Easy to learn but not good for app development.</li>
+          <li>C++: Good to learn. But it does not have good supports for cross-platform.</li>
+          <li>C#: Same as above.</li>
+          <li>Lua: Bad ecosystem. Same as python.</li>
+        </ul><br>
+
+        <h3>The good of Dart</h3>
+        <ul>
+          <li> Has a very powerful framework ---- Flutter for cross-platform development.</li>
+          <li>It's a new-gen language - simple syntax; easy to learn.</li>
+          <li>Single-threaded. Meaning there are no locks, and no usual lags from JVM (especially Android).</li>
+          <li>It supports both JIT and AOT..</li>
           <li>Cross-platform. Imagine using one language for both Android and IOS!</li>
-          <li>No more Java-styled stinky, inflexible， long, annoying code.</li>
-          <li>Good support from both community and Google! It's hot and popular!</li>
+          <li>No more Java-styled stinky, inflexible, long, annoying code.</li>
+          <li>Good support from both community and Google.</li>
         </ul>
       </div>
-
-      <div class="techniques container">
-        <h3>Native app development and Cross-platform app development</h3>
-        <p>
-          Native app development is developing apps using develop tools and programming languages
-          that the platform supports. For example, Java / Kotlin for Android and Objective-C / Swift /
-          iOS SDK for iOS. They have advantages of having full access to functionalities of the platform
-          (GPS, camera, microphone) and high performance. However, it is a bit old. We need to dynamically
-          release new content of our app. We want to reduce the cost and simplify team structures,
-          so one team working on many platforms is much better than
-          multiple teams working on different platforms.
-          Therefore, the technology of cross-platform is becoming more and more popular.
-          <br>
-          There are many attempts of finding a good solution to solve such questions.
-          For example, <code>HTML5 + native (Cordova, Ionic)</code>, <code>JS + native
-          (React Native, Weex)</code> and <code>custom rendering + native (Qt mobile, Flutter)</code>.
-          But aren't many of them succeeded as Flutter. E.g., Qt mobile fails to become a popular approach for
-          poor mobile end support and community support.
-        </p>
-        <br>
-        <h3>The advantages of Flutter</h3>
-        <p>
-          Ecology:<br> The Flutter ecosystem is growing rapidly, with an active community and a considerable number
-          of developers and third-party components.<br><br>
-          Technical support:<br> Google is currently promoting Flutter
-          heavily, and many of its authors come from the Chromium team. The high activity on GitHub is another
-          indication of strong support. From Flutter's inception to the present, the frequent release of new
-          versions shows Google's significant investment in resources, so there is no need to worry about official
-          technical support.<br><br>
-          Development efficiency:<br> One codebase can run on multiple platforms, and Flutter's hot reload feature helps developers test, build UI, add functionality, and fix errors more quickly. It achieves millisecond-level hot reloading on iOS and Android simulators or physical devices without losing state. This is fantastic, and believe me, if you're a native developer, once you've experienced the Flutter development process, you may not want to go back to native development, as few people don't complain about the slow compilation speed of native development.
-        </p>
-        <br>
-      </div>
     </div>
-
-
 
     <!-- Begin Content -->
     <!-- First Photo Grid-->
@@ -193,35 +187,48 @@
         <div class="up_left box">
           <h2>Follow Me</h2>
           <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100091622324806" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/pathfinder6996" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Anjun-Feng" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
+          <hr>
+          <a href="../assignment.html">Assignment</a>
         </div>
 
         <div class="up_middle box">
           <h2>Contact</h2>
-          <div class="my_email">
+          <div>
             <div>
-              <p><i class="fa-regular fa-envelope"></i></p>
-              <a href="#">u7277205@anu.edu.au</a>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">u7277205@anu.edu.au</a>
             </div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
+            </div>
+
           </div>
         </div>
 
         <div class="up_right box">
           <h2>Find More</h2>
-          <a href="#">Feedback</a><br>
-          <a href="#">License</a><br>
-          <a href="#">Code Repository</a><br>
-          <a href="#">TechLauncher Recruitment</a>
+          <a href="../pages/feedback.html">Feedback</a><br>
+          <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
+          <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
+          <a href="#">p5.js Official</a>
         </div>
       </div>
 
       <div class="bottom_container">
-        Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+        <p>
+          MIT License applied. Using any original content from this site will directly force your codebase to be licensed by MIT.
+          Copyright © 2023 Anjun.
+        </p>
       </div>
     </footer>
   </div>

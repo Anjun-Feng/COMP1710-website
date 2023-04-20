@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * Sends an email to the recipient by getting info from the form in `submit.html`
+ * Sends an email to the recipient by getting info from the form in `feedback.html`
  */
 function showConf() {
   if (confirm("Are you sure you want to submit this form?")) {

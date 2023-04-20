@@ -7,17 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css" href="../util/css/transparent_header.css">
-  <link rel="stylesheet" type="text/css" href="../css/sitemap.css">
+  <link rel="stylesheet" type="text/css" href="../util/css/scrollbar.css">
   <link rel="stylesheet" type="text/css" href="../util/css/footer.css">
-
+  <link rel="stylesheet" type="text/css" href="../css/sitemap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script type="text/javascript" src="../util/js/search.js"></script>
 
   <script src="../lib/p5.js"></script>
-  <script src="../lib/p5.sound.js"></script>
-  <script type="text/javascript" src="../p5js_impl/lanternNight.js"></script>
+  <script type="text/javascript" src="../p5js_impl/galaxy.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-
-
 
   <title>Site Map</title>
 </head>
@@ -25,78 +23,72 @@
 <body>
   <div class="navbar">
     <header>
-      <a class="logo">Fluttee</a>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/dart.html">
-          <i class="devicon-dart-plain-wordmark"></i>
-        </a></li>
-        <li><a href="../pages/sourcelog.html">Source Log</a></li>
-        <li><a href="../pages/sitemap.html">Site Map</a></li>
-        <li><a href="../assignment.html">Assignment</a></li>
-      </ul>
+      <div id="logo_container">
+        <a href="#" class="logo">Fluttee</a>
+      </div>
+
+      <div id="search_container">
+        <label for="search_input"></label><input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
+        <div id="results"></div>
+      </div>
+
+      <div id="links_container">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/dart.html">
+            <i class="devicon-dart-plain-wordmark"></i>
+          </a></li>
+          <li><a href="../pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="../pages/sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
     </header>
   </div>
 
+
+
   <div class="content">
-    <div class="sitemap_container">
-      <nav class="main_map container">
-        <ul>
-          <li><a href="#">Home</a>
-            <ul>
-              <li><a href="#">link1</a></li>
-              <li><a href="#">link2</a></li>
-              <li><a href="#">link3</a></li>
-              <li><a href="#">link4</a></li>
-              <li><a href="#">link5</a></li>
-            </ul>
-          </li>
-          <li><a href="#">&nbsp;Dart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <ul>
-              <li><a href="#">link1</a></li>
-              <li><a href="#">link2</a></li>
-              <li><a href="#">link3</a></li>
-              <li><a href="#">link4</a></li>
-              <li><a href="#">link5</a></li>
-              <li><a href="#">link6</a></li>
-              <li><a href="#">link7</a></li>
-              <li><a href="#">link8</a></li>
-              <li><a href="#">link9</a></li>
-            </ul>
+    <div class="sitemap">
+      <div class="internal map-container">
 
-          </li>
-          <li><a href="#">Source log</a></li>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Assignment</a></li>
+        <div class="sites">
+          <div class="home box">
+            <h3><a href="../index.html">Home</a></h3>
+          </div>
 
-        </ul>
-      </nav>
-
-      <nav class="footer_map container">
-        <ul>
-          <li><a href="#">Footer</a>
+          <div class="dart box">
+            <h3><a href="../pages/dart.html">Dart</a></h3>
             <ul>
-              <li><a href="#">link1</a>
-                <ul>
-                  <li><a href="#">link4</a>
-                    <ul>
-                      <li><a href="#">link6</a></li>
-                      <li><a href="#">link7</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">link5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">link2</a></li>
-              <li><a href="#">link3</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_begin_darting.html">Begin Darting</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_set_up_flutter.html">Set up Dart & Flutter</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_first_flutter_app.html">Your First Flutter App</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_flutter_basics.html">Flutter Basics</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_visual_flutter_pt1.html">Visual Flutter, pt.1</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_visual_flutter_pt2.html">Visual Flutter, pt.2</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_flutter_network_programming_pt1.html">Flutter Network Programming, pt.1</a></li>
+              <li><a href="../pages/addition/dart_subpgs/gallery_flutter_network_programming_pt2.html">Flutter Network Programming, pt.2</a></li>
             </ul>
-          </li>
-        </ul>
-      </nav>
+          </div>
+
+          <div class="sourcelog box">
+            <h3><a href="../pages/sourcelog.html">Sourcelog</a></h3>
+          </div>
+
+          <div class="sitemap box">
+            <h3><a href="../pages/sitemap.html">Sitemap</a></h3>
+          </div>
+
+          <div class="assignment box">
+            <h3><a href="../assignment.html">Assignment</a></h3>
+          </div>
+
+          <div class="feedback box">
+            <h3><a href="../pages/feedback.html">Feedback</a></h3>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-
-
   </div>
 
   <div class="page_footer">
@@ -105,35 +97,48 @@
         <div class="up_left box">
           <h2>Follow Me</h2>
           <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100091622324806" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/pathfinder6996" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Anjun-Feng" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
           </ul>
+          <hr>
+          <a href="../assignment.html">Assignment</a>
         </div>
 
         <div class="up_middle box">
           <h2>Contact</h2>
-          <div class="my_email">
+          <div>
             <div>
-              <p><i class="fa-regular fa-envelope"></i></p>
-              <a href="#">u7277205@anu.edu.au</a>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">u7277205@anu.edu.au</a>
             </div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
+            </div>
+
           </div>
         </div>
 
         <div class="up_right box">
           <h2>Find More</h2>
-          <a href="#">Feedback</a><br>
-          <a href="#">License</a><br>
-          <a href="#">Code Repository</a><br>
-          <a href="#">TechLauncher Recruitment</a>
+          <a href="../pages/feedback.html">Feedback</a><br>
+          <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
+          <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
+          <a href="#">p5.js Official</a>
         </div>
       </div>
 
       <div class="bottom_container">
-        Apache 2.0 License Applied. ALl content created by Pathfinder6969.
+        <p>
+          MIT License applied. Using any original content from this site will directly force your codebase to be licensed by MIT.
+          Copyright © 2023 Anjun.
+        </p>
       </div>
     </footer>
   </div>

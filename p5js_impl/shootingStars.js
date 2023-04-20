@@ -41,10 +41,10 @@ function windowResized() {
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(0);
+    background(23, 22, 22);
 
-    // Adds new stars
-    if (random() < 0.7) {
+    // 更改概率以增加小流星数量
+    if (random() < 0.9) {
         let size = random(0.05, 3);
         let velocity = map(size, 0.05, 3, 0.5, 7);
         let trailLength = map(size, 0.05, 3, 30, 10);
@@ -52,7 +52,6 @@ function draw() {
         shootingStars.push(new ShootingStar(velocity, trailLength, size, maxOpacity));
     }
 
-    // Updates and draw stars
     for (let i = shootingStars.length - 1; i >= 0; i--) {
         let s = shootingStars[i];
         s.update();
@@ -63,7 +62,6 @@ function draw() {
     }
 
 }
-
 /**
  * Creates a class for the shooting stars
  * @constructor ShootingStar(velocity, trailLength, strokeWidth, maxOpacity)
@@ -83,26 +81,25 @@ class ShootingStar {
      * Defines rules for updating ShootingStars
      */
     update() {
-        // Move star
         this.vel.add(this.acc);
         this.pos.add(this.vel);
 
-        // Create new trail point
         this.trail.push(this.pos.copy());
 
-        // Remove old trail points
         if (this.trail.length > this.trailLength) {
             this.trail.splice(0, 1);
         }
 
-        // Fade out star
-        this.opacity -= 0.5;
+        // 增加流星消失速度
+        this.opacity -= 1.5;
+
     }
 
     /**
      * Draws ShootingStars
      */
     draw() {
+
         // Draws trail
         blendMode(ADD); // Enables additive blending for the glow effect
         noFill();
