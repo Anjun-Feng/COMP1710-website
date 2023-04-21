@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Ysabeau";
+  src: url("../assets/fonts/Ysabeau-VariableFont_wght.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -47,6 +52,10 @@ body {
   text-shadow: 0 0 5px #fff, 0 0 10px #96e7d8, 0 0 15px #62dcf6, 0 0 20px #bb71ee, 0 0 30px #ff00de, 0 0 40px #ff00de;
   opacity: 0;
   animation: fadeIn 8s forwards;
+}
+
+.content .text p {
+  font-family: "Ysabeau";
 }
 
 
