@@ -1,14 +1,35 @@
-// Define a list to store the name and url of pages
+/**
+ * Author: Anjun Feng
+ * Date-created: 6/4/2023
+ * Last-edited: 21/4/2023
+ * Description:
+ * Implements a search function for the website in the nav bar.
+ */
+
+// Defines a list to store the name and url of pages
 const pages = [
-    { name: "page1", url: "page1.html" },
-    { name: "page2", url: "page2.html" },
-    { name: "page3", url: "page3.html" },
-    { name: "page4", url: "page4.html" },
-    { name: "page5", url: "page5.html" }
+    // url links not functioning!!
+    { name: "home", url: "../index.html" },
+    { name: "assignment", url: "../assignment.html" },
+    { name: "dart", url: "/pages/dart.html" },
+    { name: "feedback", url: "../pages/feedback.html" },
+    { name: "sitemap", url: "../pages/sitemap.html" },
+    { name: "sourcelog", url: "../pages/sourcelog.html" },
+    { name: "begin dart", url: "../pages/addition/dart_subpgs/gallery_begin_darting.html" },
+    { name: "fisrt flutter app", url: "../pages/addition/dart_subpgs/gallery_first_flutter_app.html" },
+    { name: "flutter basics", url: "../pages/addition/dart_subpgs/gallery_flutter_basics.html" },
+    { name: "network programming I", url: "../pages/addition/dart_subpgs/gallery_flutter_network_programming_pt1.html" },
+    { name: "network programming II", url: "../pages/addition/dart_subpgs/gallery_flutter_network_programming_pt2.html" },
+    { name: "set up flutter", url: "../pages/addition/dart_subpgs/gallery_set_up_flutter.html" },
+    { name: "visual flutter I", url: "../pages/addition/dart_subpgs/gallery_visual_flutter_pt1.html" },
+    { name: "visual flutter II", url: "../pages/addition/dart_subpgs/gallery_visual_flutter_pt2.html" },
+    { name: "dart", url: "../pages/addition/dart_subpgs/gallery_begin_darting.html" },
+
+
 ];
 
 /**
- *  Shows results
+ *  Displays search results
  */
 function showResults() {
     const results = document.getElementById("results");
@@ -16,7 +37,7 @@ function showResults() {
 }
 
 /**
- *  Searches and displays pages
+ *  Searches
  */
 function searchPages() {
     const searchInput = document.getElementById("search_input"); // Get input
@@ -56,7 +77,7 @@ function searchPages() {
     }
 }
 
-// Hide the result bar while clicking on anywhere else
+// Hides the result section while clicking on anywhere else
 document.addEventListener("click", function (event) {
     const searchContainer = document.getElementById("search_container");
     if (!searchContainer.contains(event.target)) {

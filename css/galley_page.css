@@ -4,39 +4,19 @@
   src: url("../assets/fonts/FiraCode-VariableFont_wght.ttf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ol, ul {
-  margin-left: 30px;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* uses grid for display */
-body {
-  background-size: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .content {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
   width: 1000px;
   margin: 30px auto 30px auto;
   background: rgba(190, 187, 187, 0.1);
   backdrop-filter: blur(10px);
   padding: 0 50px 0 50px;
+}
+
+/* for begin darting page only */
+.content .img_map_container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 30px 0;
 }
 
 .content p {
@@ -47,10 +27,24 @@ body {
   color: rgb(206, 220, 207);
 }
 
+.content ol li {
+  color: rgb(217, 211, 211);
+}
+
+
+.content a {
+  text-decoration: none;
+}
+
+.content ul li {
+  color: rgb(217, 211, 211);
+}
+
 .content .text {
   margin: 5px 0 5px 0;
 }
 
+/* customizes the inline code */
 .content .inline_code {
   background: rgb(59, 67, 82, 0.5);
   font-family: 'Consolas', monospace;

@@ -1,0 +1,356 @@
+/* customizes the header */
+@font-face {
+    font-family: "LMM";
+    src: url("../assets/fonts/latinmodern-math.otf");
+}
+/**
+ * Customizes the scroll bar.
+ * The width is set as 8px for p5.js to shift the canvas to such amount
+ * to avoid white space on the right side of the canvas.
+ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Customizes the track */
+::-webkit-scrollbar-track {
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+/* Customizes the thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #A0A0A0;
+    border-radius: 10px;
+}
+
+/* Customizes the thumb while hovering */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.devicon-dart-plain-wordmark {
+    font-size: 70px;
+}
+
+
+/* ------------------ Begin navbar ------------------ */
+.navbar {
+    background-color: rgba(36, 38, 43, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.navbar * {
+    font-family: "LMM", sans-serif;
+}
+
+/* Styles the header section */
+.navbar header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+/* ------------------ Begin search bar ------------------ */
+#search_container {
+    transform: translateX(0%);
+    display: inline-block;
+    margin-right: auto;
+    margin-left: 30px;
+    padding: 5px;
+    background-color: rgb(36, 41, 47);
+    border: 1px solid rgb(87, 96, 106);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Customizes the search input */
+#search_input {
+    color: white;
+    background-color: rgb(36, 41, 47);
+    width: 200px;
+    padding: 6px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+/* Customizes the search results */
+#results {
+    color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    background-color: rgb(36, 41, 47);
+    border: 1px solid rgb(87, 96, 106);
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+}
+
+#results a {
+    color: white;
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    white-space: nowrap;
+}
+
+#results a:last-child {
+    border-bottom: none;
+}
+
+#results a:hover {
+    background-color: rgba(213, 241, 202, 0.34);
+}
+
+.content {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 20px auto;
+}
+
+/* ------------------ End search bar ------------------ */
+
+.navbar header .logo {
+    font-family: 'LMM', sans-serif;
+    /* Sets the color of the logo to a semi-transparent shade of green */
+    color: white;
+    position: relative;
+    font-size: 35px;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+/* Styles the unordered list within the header */
+.navbar header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles the list items within the unordered list */
+.navbar header li {
+    font-size: 20px;
+}
+
+/* Styles the list items and anchor tags within the unordered list */
+.navbar header ul li {
+    position: relative;
+    list-style: none;
+}
+
+/* Styles the ul and li and links */
+.navbar header ul li a {
+    color: white;
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+}
+/* ------------------ End navbar ------------------ */
+
+/* ------------------ Begin footer ------------------ */
+.page_footer {
+    max-width: 100%;
+    background-color: rgba(36, 38, 43, 0.7);
+    backdrop-filter: blur(5px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #F0F1F3;
+}
+
+.page_footer * {
+    font-family: "LMM", sans-serif;
+}
+
+.page_footer .up_container {
+    display: flex;
+    justify-content: center;
+}
+
+.page_footer .up_container .box {
+    padding: 10px 20px;
+}
+
+.page_footer .up_container .box h2 {
+    color: #D3D3D3;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.page_footer .up_container .up_left ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+}
+
+.page_footer .up_container .up_right a {
+    color: #D3D3D3;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+.page_footer .up_container .up_right a:not(:first-child) {
+    margin-top: 10px;
+}
+
+.page_footer .up_container .up_right a:hover {
+    color: palegreen;
+}
+
+/* Adds a transition to the icons */
+.page_footer .up_container .up_left ul li a i {
+    transition: all .5s ease;
+}
+
+/* Changes the color of the icons when hovered over */
+.page_footer .up_container .up_left ul li a i:hover {
+    color: palegreen;
+}
+
+.page_footer .up_container .up_left ul li {
+    font-size: 20px;
+    margin: 0 15px 0 0;
+}
+
+/* Customizes the colors of the icons */
+.page_footer .up_container .up_left ul li:nth-child(1) i {
+    color: #4064AC;
+}
+
+.page_footer .up_container .up_left ul li:nth-child(2) i {
+    color: #1C96E8;
+}
+
+.page_footer .up_container .up_left ul li:nth-child(3) i {
+    color: #fff;
+}
+
+.page_footer .up_container .up_left ul li:nth-child(4) i {
+    background-image: linear-gradient(to right, #F58529, #DD2A7B, #C13584, #E1306C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.page_footer .up_container .up_left hr {
+    margin: 10px 50px 10px 0;
+}
+
+.page_footer .up_container .up_left a {
+    text-decoration: none;
+    color: #D3D3D3;
+    transition: all .5s ease;
+}
+
+.page_footer .up_container .up_left a:hover {
+    color: #0abce5;
+}
+
+
+.page_footer .up_container .up_middle .my_email div {
+    display: flex;
+}
+
+.page_footer .up_container .up_middle a {
+    color: #D3D3D3;
+    text-decoration: none;
+    transition: all .7s ease;
+}
+
+.page_footer .up_container .up_middle a:hover {
+    color: palegreen;
+}
+
+.page_footer .up_container .up_middle i {
+    margin: 0 3px 0 0;
+}
+
+.page_footer .up_container .up_middle .fa-envelope {
+    font-size: 18px;
+    color: lightblue;
+}
+
+.page_footer .up_container .up_middle .fa-whatsapp {
+    font-size: 18px;
+    color: #30f530;
+}
+
+.page_footer .up_container .up_middle .fa-facebook-messenger {
+    font-size: 18px;
+    background-image: linear-gradient(to bottom, #0078FF, #6A4BFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.page_footer .up_container .up_middle div:not(:first-child) {
+    margin: 5px 0 0 0;
+}
+
+.page_footer .up_container .up_right a:not(:first-child) {
+    margin: 5px 0 0 0;
+}
+
+.page_footer .bottom_container p {
+    text-align: center;
+    color: gray;
+}
+/* ------------------ End footer ------------------ */
+
+
+/* ------------------ Begin customization for small pages ------------------ */
+/* ------------------ Begin gallery_begin_darting ------------------ */
+.content .img_map_container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+}
+
+.content .img_map_container h2 {
+    font-family: "LMM", sans-serif;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/* ------------------ End gallery_begin_darting ------------------ */
+
+/* ------------------ End customization for small pages ------------------ */

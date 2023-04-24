@@ -1,36 +1,40 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  background-size: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  margin-left: auto;
-  margin-right: auto;
+@font-face {
+    font-family: "LMM";
+    src: url("../assets/fonts/latinmodern-math.otf");
 }
 
 .content {
-  justify-content: center;
-  display: flex;
   flex-direction: column;
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
   /*padding: 0 50px 0 50px;*/
 }
 
-.content h2, h3, li, a {
-  color: white;
+.content * {
+  font-family: "LMM", sans-serif;
+}
+
+
+.content h3 a {
+  color: #eee7e7;
+  transition: all 0.5s ease-in-out;
+}
+
+/* give the disc color */
+.content ul li {
+  color: #d9eeeb;
+}
+
+.content ul li a {
+  color: #d9eeeb;
+  transition: all 0.5s ease-in-out;
+}
+
+.content h3 a:hover {
+  color: #87ccec;
+}
+
+.content ul li a:hover {
+  color: #bb95da;
 }
 
 .content .sitemap {
@@ -58,6 +62,7 @@ body {
 }
 
 .content .sitemap .map-container .sites .box ul li {
+  list-style: disc inside;
   margin: 10px 0 15px 0;
 }
 

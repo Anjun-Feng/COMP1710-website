@@ -1,45 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* uses grid for display */
-body {
-  /*background: honeydew;*/
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-
-}
-
-ol, ul {
-  margin-left: 30px;
+@font-face {
+  font-family: 'LMM';
+  src: url('../assets/fonts/latinmodern-math.otf');
 }
 
 .content {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
   width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.content .dart_intro {
-  margin-top: 20px;
+  font-family: "LMM", sans-serif;
 }
-
-.content .dart_intro .programming_languages {
-  margin: 5% 0 0 0;
-  color: white;
-}
-
-.content .dart_intro .programming_languages h2 {
-  color: white;
-  text-align: center;
-}
-
 
 .content .dart_intro .techniques {
   margin-left: auto;
@@ -52,14 +20,37 @@ ol, ul {
   text-align: center;
 }
 
+/* customizes the gallery of programming languages */
+.content .dart_intro .programming_languages {
+  margin: 20px;
+  color: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+
+}
+
+.content .dart_intro .programming_languages:hover {
+  border-color: #666; /* 鼠标悬停时边框颜色 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 鼠标悬停时阴影效果 */
+}
+
+.content .dart_intro .programming_languages h2 {
+  color: white;
+  text-align: center;
+}
+
+
 .content .dart_intro .programming_languages div {
   color: white;
   display: flex;
   justify-content: center;
 }
 
+/* adds an effect to the images in the programming languages section*/
 .content .dart_intro .programming_languages div a img {
-
   transition: box-shadow 0.3s ease;
 }
 
@@ -75,7 +66,7 @@ ol, ul {
   margin-right: auto;
 }
 
-
+/* customizes the img gallery*/
 .img_gallery {
   margin: 50px 100px 50px 100px
 }

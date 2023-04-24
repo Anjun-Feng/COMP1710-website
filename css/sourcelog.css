@@ -4,29 +4,7 @@
   src: url("../assets/fonts/latinmodern-math.otf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* uses grid for display */
-body {
-  /* Makes the background image cover the entire element. */
-  background-size: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .content {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
   margin-left: 100px;
   margin-right: 100px;
 }

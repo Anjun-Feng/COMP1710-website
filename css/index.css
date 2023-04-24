@@ -1,28 +1,11 @@
 @font-face {
-  font-family: "Ysabeau";
-  src: url("../assets/fonts/Ysabeau-VariableFont_wght.ttf");
+  font-family: "LMM";
+  src: url("../assets/fonts/latinmodern-math.otf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* uses grid for display */
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-
-}
 
 .content {
-  background: rgba(190, 187, 187, 0.05);
-  backdrop-filter: blur(10px);
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+  backdrop-filter: blur(5px);
   width: 800px;
   margin: 100px auto 100px auto;
   padding: 100px 100px 100px 100px;
@@ -36,7 +19,7 @@ body {
   /* Centers the image horizontally. */
   margin: 0 auto;
 
-  width: 120px;
+  width: 100px;
   height: auto;
   opacity: 0.9;
 }
@@ -52,13 +35,16 @@ body {
   text-shadow: 0 0 5px #fff, 0 0 10px #96e7d8, 0 0 15px #62dcf6, 0 0 20px #bb71ee, 0 0 30px #ff00de, 0 0 40px #ff00de;
   opacity: 0;
   animation: fadeIn 8s forwards;
+  margin-bottom: 20px;
+}
+
+.content .text h2, p {
+  font-family: "LMM", sans-serif;
 }
 
 .content .text p {
-  font-family: "Ysabeau";
+  font-size: 18px;
 }
-
-
 
 @keyframes fadeIn {
   0% {
