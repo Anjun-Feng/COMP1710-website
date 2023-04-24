@@ -1,9 +1,9 @@
 /**
  * Author: Anjun Feng
  * Date-created: 6/4/2023
- * Last-edited: 20/4/2023
+ * Last-edited: 22/4/2023
  * Description:
- * Using p5.js to create a blinking galaxy scene.
+ * Using p5.js to create a galaxy scene with blinking stars.
  */
 
 let canvas;
@@ -41,6 +41,9 @@ function draw() {
     }
 }
 
+/**
+ * Defines a class for stars.
+ */
 class Star {
     constructor() {
         this.resetStar();
@@ -54,6 +57,9 @@ class Star {
         this.fadingOut = false;
     }
 
+    /**
+     * Resets the star to a random position.
+     */
     resetStar() {
         let inGalaxy = random() < 0.3;
         if (inGalaxy) {
@@ -63,6 +69,9 @@ class Star {
         }
     }
 
+    /**
+     * Updates the star's position and brightness.
+     */
     update() {
         this.angle += this.twinkleSpeed;
         this.brightness = map(sin(this.angle), -1, 1, 180, 255);
@@ -86,6 +95,9 @@ class Star {
         }
     }
 
+    /**
+     * Displays the star.
+     */
     display() {
         let c = color(red(this.color), green(this.color), blue(this.color), this.brightness * this.alpha / 255);
         noStroke();

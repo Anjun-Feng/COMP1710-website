@@ -1,6 +1,6 @@
 /**
  * Inspired by: Daniel Shiffman's Coding Challenge #1: Snowfall
- * Author： Anjun Feng
+ * Author: Anjun Feng
  * Date-created 15/7/2020
  * Last-edited 10/4/2023
  * Description:
