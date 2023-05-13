@@ -354,3 +354,10 @@ body {
 /* ------------------ End gallery_begin_darting ------------------ */
 
 /* ------------------ End customization for small pages ------------------ */
+
+
+/* ------------------ Begin feed ------------------ */
+.btn {
+    background-color: green !important;
+}
+/* ------------------ End feed ------------------ */
