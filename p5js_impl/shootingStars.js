@@ -9,12 +9,15 @@ let canvas;
 let shootingStars = [];
 let canvasWidth, canvasHeight;
 
+let backgroundColor = 0;
+let isPrinterFriendly = false;
+
 /**
  * p5.js built-in function. It is used for initializing variables and performing setup tasks
  * after the assets have been loaded and before the main loop `draw()` begins.
  */
 function setup() {
-    canvasWidth = windowWidth - 8; // 8 is the width of the scroll bar. See /util/scrollbar.css
+    canvasWidth = windowWidth - 8; // 8 is the width of the scroll bar. See default.css
     canvasHeight = windowHeight - 8;
     canvas = createCanvas(canvasWidth, canvasHeight);
 
@@ -25,6 +28,18 @@ function setup() {
     canvas.style('z-index', '-1');
     canvas.style('width', '100%');
     canvas.style('height', '100%');
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
+}
+
+
+
+function changeBackgroundColor() {
+    // 改变背景颜色的逻辑
+    isPrinterFriendly = !isPrinterFriendly;
 }
 
 /**
@@ -41,26 +56,29 @@ function windowResized() {
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(23, 22, 22);
+    if (!isPrinterFriendly) {
+        background(backgroundColor);
 
-    // 更改概率以增加小流星数量
-    if (random() < 0.9) {
-        let size = random(0.05, 3);
-        let velocity = map(size, 0.05, 3, 0.5, 7);
-        let trailLength = map(size, 0.05, 3, 30, 10);
-        let maxOpacity = map(size, 0.05, 3, 100, 255);
-        shootingStars.push(new ShootingStar(velocity, trailLength, size, maxOpacity));
-    }
+        if (random() < 0.9) {
+            let size = random(0.05, 3);
+            let velocity = map(size, 0.05, 3, 0.5, 7);
+            let trailLength = map(size, 0.05, 3, 30, 10);
+            let maxOpacity = map(size, 0.05, 3, 100, 255);
+            shootingStars.push(new ShootingStar(velocity, trailLength, size, maxOpacity));
+        }
 
-    for (let i = shootingStars.length - 1; i >= 0; i--) {
-        let s = shootingStars[i];
-        s.update();
-        s.draw();
-        if (s.isFinished()) {
-            shootingStars.splice(i, 1);
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+            let s = shootingStars[i];
+            s.update();
+            s.draw();
+            if (s.isFinished()) {
+                shootingStars.splice(i, 1);
+            }
         }
     }
-
+    else {
+        background(0);
+    }
 }
 /**
  * Creates a class for the shooting stars

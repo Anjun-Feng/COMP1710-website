@@ -21,116 +21,122 @@
 
 <body>
 
-<div class="navbar">
-  <header>
-    <div id="logo_container">
-      <a href="#" class="logo">Fluttee</a>
-    </div>
-
-    <div id="search_container">
-      <label for="search_input"></label><input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
-      <div id="results"></div>
-    </div>
-
-    <div id="links_container">
-      <ul>
-        <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../../pages/dart.html">
-          <i class="devicon-dart-plain-wordmark"></i>
-        </a></li>
-        <li><a href="../../../pages/sourcelog.html">Sourcelog</a></li>
-        <li><a href="../../../pages/sitemap.html">Sitemap</a></li>
-      </ul>
-    </div>
-  </header>
-</div>
-
-<div class="content">
-  <h2>Visual Flutter, pt.2</h2><br><br>
-
-  <h3>Introduction</h3><br>
-  <p>
-    Just like how we apply css to html, we can apply layouts with constraints to components in Flutter.
-    What's the difference? Well, we have many layouts (flex, inline-box, etc.) in H&C. In Flutter,
-    there are only two layouts you can use:
-  </p>
-  <ul>
-    <li>RenderBox</li>
-    <li>RenderSilver</li>
-  </ul>
-  <p>
-    The constrains are just the same as they are in CSS - father components constraint child components.
-    Imagine you have a big div with small divs in it, it's natural that the small ones cannot exceed the
-    size of the big one - their father div.
-  </p><br>
-
-  <h3>BoxConstraints</h3><br>
-
-  <p>
-    The constructor for a BoxConstraint is:
-  </p><br>
-
-  <pre class="language-javascript"><code>
-    const BoxConstraints({ // this is the constructor of the BoxConstraint class
-      this.minWidth = 0.0, // minimum width
-      this.maxWidth = double.infinity, // maximum width
-      this.minHeight = 0.0, // minimum height
-      this.maxHeight = double.infinity // maximum height
-    })
-  </code></pre>
-
-</div>
-
-<div class="page_footer">
-  <footer>
-    <div class="up_container">
-      <div class="up_left box">
-        <h2>Follow Me</h2>
-        <ul>
-          <li><a href="https://www.facebook.com/profile.php?id=100091622324806" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-          <li><a href="https://twitter.com/pathfinder6996" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-          <li><a href="https://github.com/Anjun-Feng" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-          <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-        </ul>
-        <hr>
-        <a href="../../../assignment.html">Assignment</a>
+  <div class="navbar">
+    <header>
+      <div id="logo_container">
+        <a href="#" class="logo">Fluttee</a>
       </div>
 
-      <div class="up_middle box">
-        <h2>Contact</h2>
-        <div>
-          <div>
-            <i class="fa-regular fa-envelope"></i>
-            <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">u7277205@anu.edu.au</a>
-          </div>
-          <div>
-            <i class="fa-brands fa-whatsapp"></i>
-            <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
-          </div>
-          <div>
-            <i class="fa-brands fa-facebook-messenger"></i>
-            <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
-          </div>
+      <div id="search_container">
+        <label for="search_input"></label><input type="text" id="search_input" oninput="searchPages()" onclick="showResults()" placeholder="Search for pages">
+        <div id="results"></div>
+      </div>
 
+      <div id="links_container">
+        <ul>
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../pages/dart.html">
+            <i class="devicon-dart-plain-wordmark"></i>
+          </a></li>
+          <li><a href="../../../pages/sourcelog.html">Sourcelog</a></li>
+          <li><a href="../../../pages/sitemap.html">Sitemap</a></li>
+          <li><a href="../../../pages/social_feed.html">Feed</a></li>
+        </ul>
+      </div>
+    </header>
+  </div>
+
+  <div class="content">
+    <h2>Visual Flutter, pt.2</h2><br><br>
+
+    <h3>Introduction</h3><br>
+    <p>
+      Just like how we apply css to html, we can apply layouts with constraints to components in Flutter.
+      What's the difference? Well, we have many layouts (flex, inline-box, etc.) in H&C. In Flutter,
+      there are only two layouts you can use:
+    </p>
+    <ul>
+      <li>RenderBox</li>
+      <li>RenderSilver</li>
+    </ul>
+    <p>
+      The constrains are just the same as they are in CSS - father components constraint child components.
+      Imagine you have a big div with small divs in it, it's natural that the small ones cannot exceed the
+      size of the big one - their father div.
+    </p><br>
+
+    <h3>BoxConstraints</h3><br>
+
+    <p>
+      The constructor for a BoxConstraint is:
+    </p><br>
+
+    <pre class="language-javascript"><code>
+      const BoxConstraints({ // this is the constructor of the BoxConstraint class
+        this.minWidth = 0.0, // minimum width
+        this.maxWidth = double.infinity, // maximum width
+        this.minHeight = 0.0, // minimum height
+        this.maxHeight = double.infinity // maximum height
+      })
+    </code></pre>
+
+  </div>
+
+  <div class="page_footer">
+    <footer>
+      <div class="up_container">
+        <div class="up_left box">
+          <h2>Follow Me</h2>
+          <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=100091622324806" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/pathfinder6996" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Anjun-Feng" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.instagram.com/pathfinder669/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+          <hr>
+          <div>
+            <ul>
+              <li><a href="../../../assignment.html">Assignment</a></li>
+              <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://example.com" data-text="Check out this website!" data-size="large">Tweet</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="up_middle box">
+          <h2>Contact</h2>
+          <div>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <a href="https://outlook.live.com/mail/0/deeplink/compose?to=<u7277205@anu.edu.au>" target="_blank">u7277205@anu.edu.au</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+            </div>
+            <div>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="up_right box">
+          <h2>Find More</h2>
+          <a href="../../../pages/feedback.html">Feedback</a><br>
+          <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
+          <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
+          <a href="#">p5.js Official</a>
         </div>
       </div>
 
-      <div class="up_right box">
-        <h2>Find More</h2>
-        <a href="../../../pages/feedback.html">Feedback</a><br>
-        <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
-        <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
-        <a href="#">p5.js Official</a>
+      <div class="bottom_container">
+        <p>
+          MIT License applied. Using any original content from this site will directly force your codebase to be licensed by MIT.
+          Copyright © 2023 Anjun.
+        </p>
       </div>
-    </div>
-
-    <div class="bottom_container">
-      <p>
-        MIT License applied. Using any original content from this site will directly force your codebase to be licensed by MIT.
-        Copyright © 2023 Anjun.
-      </p>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
 </body>
 </html>

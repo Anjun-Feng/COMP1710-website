@@ -24,9 +24,25 @@ const pages = [
     { name: "visual flutter I", url: "../pages/addition/dart_subpgs/gallery_visual_flutter_pt1.html" },
     { name: "visual flutter II", url: "../pages/addition/dart_subpgs/gallery_visual_flutter_pt2.html" },
     { name: "dart", url: "../pages/addition/dart_subpgs/gallery_begin_darting.html" },
-
-
 ];
+
+/**
+ * Initializes the Twitter API import
+ */
+window.twttr = (function(d, s, id) {
+    let js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+    return t;
+}(document, "script", "twitter-wjs"));
 
 /**
  *  Displays search results
