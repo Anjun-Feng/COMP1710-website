@@ -10,7 +10,8 @@ let canvas;
 let canvasWidth, canvasHeight;
 let stars = [];
 let numStars = 600;
-
+let backgroundColor = 0;
+let isPrinterFriendly = false;
 function setup() {
     canvasWidth = windowWidth - 8;
     canvasHeight = windowHeight - 8;
@@ -24,6 +25,11 @@ function setup() {
     for (let i = 0; i < numStars; i++) {
         stars.push(new Star());
     }
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
 }
 
 function windowResized() {
@@ -32,12 +38,21 @@ function windowResized() {
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
-function draw() {
-    background(0);
+function changeBackgroundColor() {
+    isPrinterFriendly = !isPrinterFriendly;
+}
 
-    for (let i = 0; i < stars.length; i++) {
-        stars[i].update();
-        stars[i].display();
+function draw() {
+    if (!isPrinterFriendly) {
+        background(backgroundColor);
+
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].update();
+            stars[i].display();
+        }
+    }
+    else {
+        background(0);
     }
 }
 

@@ -15,6 +15,8 @@ let gravity;
 let zOff = 0;
 let canvasWidth, canvasHeight;
 let pg;
+let backgroundColor = 0;
+let isPrinterFriendly = false;
 /**
  * p5.js built-in function. Allows the window to resize to a specified width and height.
  */
@@ -38,6 +40,16 @@ function setup() {
         let y = random(height);
         snows.push(new Snowflake(x, y));
     }
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
+}
+
+
+function changeBackgroundColor() {
+    isPrinterFriendly = !isPrinterFriendly;
 }
 
 /**
@@ -53,20 +65,25 @@ function windowResized() {
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(23, 22, 22);
-    zOff += 0.1;
+    if (!isPrinterFriendly) {
+        background(backgroundColor);
 
-    for (snow of snows) {
-        let xOff = snow.pos.x / width;
-        let yOff = snow.pos.y / height;
-        let wAngle = noise(xOff, yOff, zOff) * TWO_PI;
-        let wind = p5.Vector.fromAngle(wAngle);
-        wind.mult(0.1);
+        zOff += 0.1;
 
-        snow.accUp(gravity);
-        snow.accUp(wind);
-        snow.update();
-        snow.show();
+        for (snow of snows) {
+            let xOff = snow.pos.x / width;
+            let yOff = snow.pos.y / height;
+            let wAngle = noise(xOff, yOff, zOff) * TWO_PI;
+            let wind = p5.Vector.fromAngle(wAngle);
+            wind.mult(0.1);
+
+            snow.accUp(gravity);
+            snow.accUp(wind);
+            snow.update();
+            snow.show();
+        }
+    } else {
+        background(0);
     }
 }
 

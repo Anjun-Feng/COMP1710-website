@@ -3,7 +3,6 @@
   font-family: "LMM";
   src: url("../assets/fonts/latinmodern-math.otf");
 }
-
 /**
  * Customizes the scroll bar.
  * The width is set as 8px for p5.js to shift the canvas to such amount
@@ -42,7 +41,6 @@ html {
 }
 
 body {
-  background: black; /* ======================================================================= */
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -51,7 +49,6 @@ body {
 .devicon-dart-plain-wordmark {
   font-size: 70px;
 }
-
 
 /* ------------------ Begin navbar ------------------ */
 .navbar {
@@ -336,7 +333,6 @@ body {
 /* ------------------ End footer ------------------ */
 
 
-/* ------------------ Begin customization for small pages ------------------ */
 /* ------------------ Begin gallery_begin_darting ------------------ */
 .content .img_map_container {
 
@@ -352,10 +348,8 @@ body {
   margin-bottom: 10px;
 }
 
-
 /* ------------------ End gallery_begin_darting ------------------ */
 
-/* ------------------ End customization for small pages ------------------ */
 
 
 /* ------------------ Begin feed ------------------ */
@@ -363,3 +357,28 @@ body {
   background-color: green !important;
 }
 /* ------------------ End feed ------------------ */
+
+/* Add on styles for printer-friendly overwriting styles page */
+.navbar header {
+  display: none;
+}
+
+.page_footer footer {
+  display: none;
+}
+
+#changeColorButton {
+  background-color: rgb(46, 58, 70);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 50px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+body {
+  background: black;
+}

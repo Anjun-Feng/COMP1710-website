@@ -9,7 +9,8 @@ let fireflies = [];
 let fireflyCount = 100;
 let canvas;
 let canvasWidth, canvasHeight;
-
+let backgroundColor = 0;
+let isPrinterFriendly = false;
 /**
  * p5.js built-in function. It is used for initializing variables and performing setup tasks
  * after the assets have been loaded and before the main loop `draw()` begins.
@@ -28,6 +29,11 @@ function setup() {
     for (let i = 0; i < fireflyCount; i++) {
         fireflies.push(new Firefly());
     }
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
 }
 
 /**
@@ -39,14 +45,25 @@ function windowResized() {
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
+function changeBackgroundColor() {
+    // 改变背景颜色的逻辑
+    isPrinterFriendly = !isPrinterFriendly;
+}
+
 /**
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(0);
-    for (let firefly of fireflies) {
-        firefly.update();
-        firefly.show();
+    if (!isPrinterFriendly) {
+        background(backgroundColor);
+
+        for (let firefly of fireflies) {
+            firefly.update();
+            firefly.show();
+        }
+    }
+    else {
+        background(0);
     }
 }
 

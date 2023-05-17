@@ -9,7 +9,8 @@
 let canvas;
 let canvasWidth, canvasHeight;
 const lanterns = [];
-
+let backgroundColor = 0;
+let isPrinterFriendly = false;
 /**
  * p5.js built-in function. Allows the window to resize to a specified width and height.
  */
@@ -23,6 +24,11 @@ function setup() {
     canvas.style('z-index', '-1');
     canvas.style('width', '100%');
     canvas.style('height', '100%');
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
 }
 
 /**
@@ -34,24 +40,33 @@ function windowResized() {
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
+function changeBackgroundColor() {
+    isPrinterFriendly = !isPrinterFriendly;
+}
+
 /**
  * p5.js built-in function. Draws the content each frame rate.
  */
 function draw() {
-    background(23, 22, 22);
+    if (!isPrinterFriendly) {
+        background(backgroundColor);
 
-    if (random() < 0.1) {
-        lanterns.push(new Lantern());
-    }
-
-    for (let i = lanterns.length - 1; i >= 0; i--) {
-        const lantern = lanterns[i];
-        lantern.update();
-        lantern.show();
-
-        if (lantern.isOffscreen()) {
-            lanterns.splice(i, 1);
+        if (random() < 0.1) {
+            lanterns.push(new Lantern());
         }
+
+        for (let i = lanterns.length - 1; i >= 0; i--) {
+            const lantern = lanterns[i];
+            lantern.update();
+            lantern.show();
+
+            if (lantern.isOffscreen()) {
+                lanterns.splice(i, 1);
+            }
+        }
+    }
+    else {
+        background(0);
     }
 }
 

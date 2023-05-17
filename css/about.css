@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "LMM";
+  src: url("../assets/fonts/latinmodern-math.otf");
+}
+
+.content {
+  backdrop-filter: blur(5px);
+  width: 800px;
+  margin: 100px auto 100px auto;
+  padding: 100px 100px 100px 100px;
+}
+
+.content h3, p {
+  font-family: "LMM", sans-serif;
+}
+
+/* Adds a fade, glowing effect to the text. */
+.content h3 {
+  font-size: 30px;
+  color : aliceblue;
+  text-align: center;
+}
+
+
+.content p {
+  font-size: 20px;
+  color : white;
+}
+
+

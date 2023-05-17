@@ -50,6 +50,11 @@ function setup() {
     } else {
         console.log('Your browser supports the getUserMedia API');
     }
+
+    if (document.getElementById('changeColorButton') != null) {
+        var changeColorButton = document.getElementById('changeColorButton');
+        changeColorButton.addEventListener('click', changeBackgroundColor);
+    }
 }
 
 /**

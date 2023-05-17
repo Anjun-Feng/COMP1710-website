@@ -38,7 +38,6 @@ function setup() {
 
 
 function changeBackgroundColor() {
-    // 改变背景颜色的逻辑
     isPrinterFriendly = !isPrinterFriendly;
 }
 
@@ -50,7 +49,6 @@ function windowResized() {
     canvasHeight = windowHeight;
     resizeCanvas(canvasWidth, canvasHeight);
 }
-
 
 /**
  * p5.js built-in function. Draws the content each frame rate.

@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" type="text/css" href="../../../css/default.css">
+  <link id="alternative" rel="stylesheet" type="text/css" href="../../../css/alternative.css">
+
+  <link id="default" rel="stylesheet" type="text/css" href="../../../css/default.css">
+
   <link rel="stylesheet" type="text/css" href="../../../css/galley_page.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet"/>
@@ -15,6 +18,8 @@
   <script type="text/javascript" src="../../../p5js_impl/snowing.js"></script>
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+  <script type="text/javascript" src="../../../util/js/toggleCSS.js"></script>
+
   <title>First Flutter App</title>
 </head>
 
@@ -39,10 +44,14 @@
         <li><a href="../../../pages/sourcelog.html">Sourcelog</a></li>
         <li><a href="../../../pages/sitemap.html">Sitemap</a></li>
         <li><a href="../../../pages/social_feed.html">Feed</a></li>
-
+        <li><a href="../../../pages/about_my_site.html">About</a></li>
       </ul>
     </div>
   </header>
+
+  <div>
+    <button id="changeColorButton" onclick=" toggleCSS();">Switch style</button>
+  </div>
 </div>
 
 <div class="content">
@@ -141,7 +150,7 @@
           </div>
           <div>
             <i class="fa-brands fa-whatsapp"></i>
-            <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+            <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">msg via Whatsapp</a>
           </div>
           <div>
             <i class="fa-brands fa-facebook-messenger"></i>

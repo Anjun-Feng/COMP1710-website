@@ -10,10 +10,3 @@ function toggleCSS() {
         style2.disabled = false;
     }
 }
-
-function toggleJS() {
-    var script = document.getElementById('shooting_stars');
-    if (script) {
-        script.disabled = !script.disabled;
-    }
-}

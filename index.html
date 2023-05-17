@@ -6,14 +6,16 @@
   <title>Fluttee</title>
 
   <!-- Import Section-->
-  <link rel="stylesheet" type="text/css" href="./css/default.css">
+  <link id="alternative" rel="stylesheet" type="text/css" href="./css/alternative.css">
+  <link id="default" rel="stylesheet" type="text/css" href="./css/default.css">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <script type="text/javascript" src="./lib/p5.js"></script>
   <script type="text/javascript" src="p5js_impl/shootingStars.js"></script>
   <script type="text/javascript" src="./util/js/search.js"></script>
-<!--  <script type="text/javascript" src="./lib/p5.sound.js"></script>-->
   <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./util/js/toggleCSS.js"></script>
+
 </head>
 
 <body>
@@ -37,10 +39,14 @@
           <li><a href="./pages/sourcelog.html">Sourcelog</a></li>
           <li><a href="./pages/sitemap.html">Sitemap</a></li>
           <li><a href="./pages/social_feed.html">Feed</a></li>
-
+          <li><a href="./pages/about_my_site.html">About</a></li>
         </ul>
       </div>
     </header>
+
+    <div>
+      <button id="changeColorButton" onclick=" toggleCSS();">Switch style</button>
+    </div>
   </div>
 
   <div class="content">
@@ -50,7 +56,6 @@
 
     <div class="text">
       <h2>Welcome to my site!</h2>
-
       <p>
         Hi there! My name is Anjun, a third-year student from ANU, studying BIT and the major of Software Development.<br><br>
 
@@ -70,11 +75,8 @@
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0&appId=760623115692557&autoLogAppEvents=1" nonce="EzBdrGJ2"></script>
       <div class="fb-page" data-href="https://www.facebook.com/lelouch.lanpleut" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
-
     </div>
-
   </div>
-
 
   <div class="page_footer">
     <footer>
@@ -104,7 +106,7 @@
             </div>
             <div>
               <i class="fa-brands fa-whatsapp"></i>
-              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">+61 478927444</a>
+              <a href="https://wa.me/478927444?text=Hi%20there..." target="_blank">msg via Whatsapp</a>
             </div>
             <div>
               <i class="fa-brands fa-facebook-messenger"></i>
