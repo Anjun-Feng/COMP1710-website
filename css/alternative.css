@@ -359,6 +359,12 @@ body {
 /* ------------------ End feed ------------------ */
 
 /* Add on styles for printer-friendly overwriting styles page */
+@media print {
+  .page-breaker {
+    page-break-after: always;
+  }
+}
+
 .navbar header {
   display: none;
 }
