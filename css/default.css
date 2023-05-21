@@ -334,7 +334,7 @@ body {
 /* ------------------ End footer ------------------ */
 
 
-/* ------------------ Begin customization for small pages ------------------ */
+
 /* ------------------ Begin gallery_begin_darting ------------------ */
 .content .img_map_container {
     display: flex;
@@ -352,7 +352,18 @@ body {
 
 /* ------------------ End gallery_begin_darting ------------------ */
 
-/* ------------------ End customization for small pages ------------------ */
+.content-validation {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 20px auto;
+    width: 1000px;
+}
+
+.content-validation h3 {
+    font-family: "LMM", sans-serif;
+    color: white;
+}
 
 
 /* ------------------ Begin feed ------------------ */

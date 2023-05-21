@@ -5,19 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link id="alternative" rel="stylesheet" type="text/css" href="../../../css/alternative.css">
-  <link id="default" rel="stylesheet" type="text/css" href="../../../css/default.css">
-  <link rel="stylesheet" type="text/css" href="../../../css/galley_page.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <script type="text/javascript" src="../../../util/js/search.js"></script>
-  <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
-  <script src="../../../lib/p5.js"></script>
-  <script type="text/javascript" src="../../../p5js_impl/snowing.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
-  <script type="text/javascript" src="../../../util/js/toggleCSS.js"></script>
 
-  <title>Flutter Network Programming, Part 2</title>
+  <link id="alternative" rel="stylesheet" type="text/css" href="../css/alternative.css">
+  <link id="default" rel="stylesheet" type="text/css" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/about.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script type="text/javascript" src="../util/js/search.js"></script>
+  <script src="../lib/p5.js"></script>
+  <script src="../lib/p5.sound.js"></script>
+  <script src="https://kit.fontawesome.com/e2402a89f2.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../p5js_impl/snowing.js"></script>
+  <script type="text/javascript" src="../util/js/toggleCSS.js"></script>
+
+  <title>Validation results</title>
 </head>
 
 <body>
@@ -34,72 +35,27 @@
 
     <div id="links_container">
       <ul>
-        <li><a href="../../../index.html">Home</a></li>
-        <li><a href="../../../pages/dart.html">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/dart.html">
           <i class="devicon-dart-plain-wordmark"></i>
         </a></li>
-        <li><a href="../../../pages/sourcelog.html">Sourcelog</a></li>
-        <li><a href="../../../pages/sitemap.html">Sitemap</a></li>
-        <li><a href="../../../pages/social_feed.html">Flutter Feed</a></li>
-        <li><a href="../../../pages/about_my_site.html">About</a></li>
+        <li><a href="../pages/sourcelog.html">Sourcelog</a></li>
+        <li><a href="../pages/sitemap.html">Sitemap</a></li>
+        <li><a href="../pages/social_feed.html">Flutter Feed</a></li>
+        <li><a href="../pages/about_my_site.html">About</a></li>
       </ul>
     </div>
   </header>
-
   <div>
     <button id="changeColorButton" onclick=" toggleCSS();">Printer-friendly mode</button>
   </div>
 </div>
 
-<div class="content">
-  <h2>Network Programming with Flutter, pt.2</h2><br>
-  <h3>Login a user</h3><br>
-
-  <p>
-    For security, normally we would use POST to make the server response to our login request. But we've
-    already introduced POST, so let's use GET this time.
-  </p><br>
-
-  <p>
-    A GET method, as its name suggests, gets data from the server.
-  </p><br>
-
-  <pre><code class="language-javascript">
-    // ------------------ login user ------------------ //
-    Future&lt;int&gt; loginUser(String username, String password) async {
-      final credentials = base64Encode(utf8.encode('$username:$password'));
-      final response = await http.get(
-        Uri.parse('$apiUrl/json/wp/v2/users/me'), // doesn't work; need to use jwt for authentication
-        headers: {
-          'Authorization': 'Basic $credentials',
-        },
-      );
-
-      if (response.statusCode == 200) {
-        final jsonResponse = json.decode(response.body);
-        if (jsonResponse.isNotEmpty) {
-          print('Status code: ${response.statusCode}');
-          print(jsonResponse[0]["id"]);
-          return jsonResponse[0]["id"];
-        } else {
-          print('Status code: ${response.statusCode}');
-          print('Response body: ${response.body}');
-          throw Exception("User not found");
-        }
-      } else {
-        print('Status code: ${response.statusCode}');
-        print('Response body: ${response.body}');
-        throw Exception("Failed to login user");
-      }
-    }
-  </code></pre><br>
-
-  <P>
-    We can see, similar to register, login still sends the endpoint a request. The server of the endpoint
-    will then get user info from the database, and return it back to us in an HTTP response.
-  </P>
-
-
+<div class="content-validation">
+  <h3>Some screenshots of validation for my website.</h3>
+  <img src="../assets/images/validation/validation_index.png" alt="a img of screenshot of the validation result for the main page">
+  <br>
+  <img src="../assets/images/validation/validation_dart.png" alt="a img of screenshot of the validation result for the dart page">
 </div>
 
 <div class="page_footer">
@@ -116,7 +72,7 @@
         <hr>
         <div>
           <ul>
-            <li><a href="../../../assignment.html">Assignment</a></li>
+            <li><a href="../assignment.html">Assignment</a></li>
             <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://example.com" data-text="Check out this website!" data-size="large">Tweet</a></li>
           </ul>
         </div>
@@ -137,13 +93,12 @@
             <i class="fa-brands fa-facebook-messenger"></i>
             <a href="https://m.me/5458821394223500" target="_blank">msg via Messenger</a>
           </div>
-
         </div>
       </div>
 
       <div class="up_right box">
         <h2>Find More</h2>
-        <a href="../../../pages/feedback.html">Feedback</a><br>
+        <a href="../pages/feedback.html">Feedback</a><br>
         <a href="https://github.com/Anjun-Feng/comp1710" target="_blank">GitHub</a><br>
         <a href="https://opensource.org/license/mit/" target="_blank">License</a><br>
         <a href="#">p5.js Official</a>
@@ -158,6 +113,5 @@
     </div>
   </footer>
 </div>
-
 </body>
 </html>
